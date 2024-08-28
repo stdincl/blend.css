@@ -1,0 +1,624 @@
+@import url('theme.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root {
+
+	/*
+		Template for color definition.
+		Every color theme use this definition
+		--bl-{palette}:[color]
+		--bl-{palette}-light:[color for secundary section of element]
+		--bl-{palette}-translucent:[color for transparent backgrounds]
+		--bl-{palette}-active:[color for hover actions]
+		--bl-{palette}-text:[text default color]
+		--bl-{palette}-text-strong:[text color for main elements, ex:titles]
+		--bl-{palette}-text-secundary:[text color for secundary elements, ex:labels, notes, ...]
+		--bl-{palette}-border-color:[dafult border color for element if needed]
+		--bl-{palette}-border-color-strong:[border color for hover or active states of element if needed]
+
+		BlendCSS comes with some core palettes, 
+		solid:For components, is the default color for UI
+		primary:For main actions or elements that requires user atention
+		noun:For hight contrast elements, must be complementary of -solid-
+		destructive:For destructive elements, delete buttons,...
+		constructive:For constructive elements, create buttons,...
+	*/
+	/* solid:theme */
+	--bl-solid:#ffffff;
+	--bl-solid-light:#f3f4f6;
+	--bl-solid-translucent:#ffffff22;
+	--bl-solid-active:#f7f8fa;
+	--bl-solid-text:#09090e;
+	--bl-solid-text-strong:#000000;
+	--bl-solid-text-secundary:#464e66;
+	--bl-solid-border-color:#e7e8ea;
+	--bl-solid-border-color-strong:#d1d7dd;
+
+	/* primary:theme */
+	--bl-primary:#0d75ff;
+	--bl-primary-light:#3c90ff;
+	--bl-primary-translucent:#0d75ff22;
+	--bl-primary-active:#0556c0;
+	--bl-primary-text:#d8e9ff;
+	--bl-primary-text-strong:#ffffff;
+	--bl-primary-text-secundary:#a8cdff;
+	--bl-primary-border-color:#0d75ff;
+	--bl-primary-border-color-strong:#0d75ff;
+
+	/* noun:theme */
+	--bl-noun:#100f1e;
+	--bl-noun-light:#3c3967;
+	--bl-noun-translucent:#100f1e22;
+	--bl-noun-active:#2b22a9;
+	--bl-noun-text:#d4d1ff;
+	--bl-noun-text-strong:#ffffff;
+	--bl-noun-text-secundary:#6f7896;
+	--bl-noun-border-color:#e7e8ea;
+	--bl-noun-border-color-strong:#d1d7dd;
+
+	/* constructive:theme */
+	--bl-constructive:#28d659;
+	--bl-constructive-light:#53de7a;
+	--bl-constructive-translucent:#28d65922;
+	--bl-constructive-active:#128755;
+	--bl-constructive-text:#d8ffe4;
+	--bl-constructive-text-strong:#ffffff;
+	--bl-constructive-text-secundary:#a8ffd5;
+	--bl-constructive-border-color:#1ac449;
+	--bl-constructive-border-color-strong:#149b3a;
+
+	/* destructive:theme */
+	--bl-destructive:#f81d5e;
+	--bl-destructive-light:#ff4a7f;
+	--bl-destructive-translucent:#f81d5e22;
+	--bl-destructive-active:#b41645;
+	--bl-destructive-text:#ffd8e1;
+	--bl-destructive-text-strong:#ffffff;
+	--bl-destructive-text-secundary:#ffa8a8;
+	--bl-destructive-border-color:#c41a22;
+	--bl-destructive-border-color-strong:#9b1428;
+
+	/* Default UI settings */
+	--bl-wrap-size:90%;
+	--bl-wrap-size-limit:1200px;
+	--bl-wrap-size-limit-narrow:600px;
+
+	--bl-warning:#ff9800;
+	--bl-round:8px;
+	--bl-shadow:0 2px 5px rgba(0,0,0,0.06);
+	
+	--bl-font:'Inter';
+	--bl-font-bold:500;
+	--bl-font-size-s:11px;
+	--bl-font-size-m:14px;
+	--bl-font-size-l:16px;
+	--bl-font-size-xl:22px;
+	--bl-font-size:var(--bl-font-size-m);
+
+	--bl-transition-:0.3s;
+	--bl-transition--slow:0.6s;
+	--bl-transition--fast:0.15s;
+
+	--bl-input-size:42px;
+	--bl-input-spacing-horizontal:16px;
+	--bl-input-spacing-vertical:11px;
+	--bl-input-spacing:var(--bl-input-spacing-vertical) var(--bl-input-spacing-horizontal);
+
+	--bl-icon-size:var(--bl-input-size);
+	--bl-icon-size-narrow:calc(var(--bl-input-size)*0.5);
+
+	--bl-textarea-height:140px;
+
+	--bl-label-size:24px;
+
+	--bl-check-size:18px;
+
+	--bl-check-icon:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+	--bl-radio-icon:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e")
+
+}
+
+html[blend],
+html[blend] body {
+	display:flex;
+	flex-direction:column;
+	overflow:hidden;
+	height:100%;
+	width:100%;
+}
+html[blend] body,
+html[blend] body * {
+	font-family:var(--bl-font);
+	font-size:var(--bl-font-size);
+}
+
+html[blend] h1,
+html[blend] h2,
+html[blend] h3,
+html[blend] h4,
+html[blend] h5,
+html[blend] h6,
+html[blend] strong,
+html[blend] b {
+	font-weight:var(--bl-font-bold);
+}
+html[blend] h1 { font-size:var(--bl-font-size-xl) }
+html[blend] h2 { font-size:var(--bl-font-size-l) }
+html[blend] h3 { font-size:var(--bl-font-size-m) }
+html[blend] h4 { font-size:var(--bl-font-size-s) }
+
+bl-wrap {
+	width:var(--bl-wrap-size);
+	max-width:var(--bl-wrap-size-limit);
+	margin:0 auto;
+}
+	bl-wrap[narrow] {
+		max-width:var(--bl-wrap-size-limit-narrow);
+	}
+
+
+
+bl-nav {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+}
+
+/* 
+	Input component
+	<bl-input 
+		[inset] causes label incorporation
+		[overlap] causes label overlap
+		[error] for error coloring (destructive)
+		[success] for success coloring (constructive)
+		[static] disable expansion
+		[inline] removes division lines
+		[column] transforms layout in columns
+		/>
+*/
+bl-input {
+	display:flex;
+	position:relative;
+	background:var(--bl-solid);
+	border:1px solid var(--bl-solid-border-color-strong);
+	border-radius:var(--bl-round);
+	box-shadow:var(--bl-shadow);
+	flex-direction:row;
+	align-items:center;
+	font-size:var(--bl-font-size-m);
+	height:var(--bl-input-size);
+	box-sizing:border-box;
+	width:100%;
+}
+	bl-input[inset]:has(>label:first-child) {
+		height:calc(var(--bl-input-size) + var(--bl-label-size));
+	}
+	bl-input * {
+		font-family:var(--bl-font);
+		z-index:1000;
+	}
+	bl-input[static] {
+		width:unset;
+	}
+
+	/* Core component */
+		bl-input > select + label,
+		bl-input > [type=file] + label,
+		bl-input > [type=checkbox] + label,
+		bl-input > [type=radio] + label,
+		bl-input > input,
+		bl-input > button,
+		bl-input > textarea {
+			display:block;
+			padding:var(--bl-input-spacing);
+			flex:1;
+			outline:none;
+			border-radius:var(--bl-round);
+			box-sizing:border-box;
+			z-index:999;
+			color:var(--bl-solid-text);
+			width:100%;
+		}
+		bl-input:has(>*:focus),
+		bl-input > [type=checkbox]:focus,
+		bl-input > [type=radio]:focus {
+			outline:2px solid var(--bl-primary);
+			outline-offset:2px;
+		}
+
+		bl-input > button:hover {
+			background:var(--bl-solid-active);
+			outline:3px solid var(--bl-solid);
+			outline-offset:-3px;
+		}
+
+	/* Textinputs modificators */
+		/* Prefix */
+			bl-input:has(>[type=text]) > pre,
+			bl-input:has(>[type=password]) > pre {
+				padding-left:var(--bl-input-spacing-horizontal);
+				margin-right:calc(var(--bl-input-spacing-horizontal)* -0.6);
+				display:flex;
+				align-items:center;
+				pointer-events:none;
+			}
+		/* Key */
+			bl-input:has(>[type=text]) > kbd,
+			bl-input:has(>[type=password]) > kbd {
+				margin:0 calc(var(--bl-input-spacing-horizontal)*0.5);
+				padding:4px 6px;
+				pointer-events:none;
+				border:1px solid var(--bl-solid-border-color-strong);
+				border-radius:4px;
+				box-shadow:var(--bl-shadow);
+				font-size:var(--bl-font-size-s);
+				color:var(--bl-solid-text-secundary);
+			}
+
+	/* Error */
+		bl-input > aside {
+			display:none;
+			flex-direction:row;
+			align-items:flex-end;
+			position:absolute;
+			left:0;
+			right:0;
+			top:100%;
+			font-weight:var(--bl-font-bold);
+			pointer-events:none;
+			line-height:1;
+			height:var(--bl-label-size);
+			color:var(--bl-destructive);
+		}
+		bl-input[error] > aside {
+			display:flex;
+		}
+		bl-input[error]:has(>aside) {
+			margin-bottom:var(--bl-label-size);
+		}
+		bl-input[error] {
+			border-color:var(--bl-destructive);
+		}
+		bl-input[error]:has(>*:focus),
+		bl-input[error] > [type=checkbox]:focus,
+		bl-input[error] > [type=radio]:focus {
+			outline-color:var(--bl-destructive-translucent);
+		}
+		bl-input[error] > i,
+		bl-input[error]:has(>*:focus) > i,
+		bl-input[error] > label:first-child {
+			color:var(--bl-destructive);
+		}
+
+	/* Constructive */
+		bl-input[success] {
+			border-color:var(--bl-constructive);
+		}
+		bl-input[success]:has(>*:focus),
+		bl-input[success] > [type=checkbox]:focus,
+		bl-input[success] > [type=radio]:focus {
+			outline-color:var(--bl-constructive-translucent);
+		}
+		bl-input[success] > i,
+		bl-input[success]:has(>*:focus) > i,
+		bl-input[success] > label:first-child {
+			color:var(--bl-constructive);
+		}
+
+	/* Label */
+		bl-input > label:first-child,
+		bl-input > a {
+			display:flex;
+			flex-direction:row;
+			position:absolute;
+			left:0;
+			bottom:100%;
+			font-weight:var(--bl-font-bold);
+			pointer-events:none;
+			line-height:1;
+			height:var(--bl-label-size);
+			z-index:1000;
+		}
+		bl-input > a {
+			left:unset;
+			right:0;
+			font-weight:normal;
+			color:var(--bl-solid-text-secundary);
+		}
+		bl-input > a[href] {
+			pointer-events:all;
+			color:var(--bl-primary);
+			font-weight:var(--bl-font-bold);
+			cursor:pointer;
+		}
+		bl-input > a:hover {
+			color:var(--bl-primary-active);
+		}
+			bl-input:has(>label:first-child),
+			bl-input:has(>a) {
+				margin-top:var(--bl-label-size);
+			}
+		/* [inset] > label modificators */
+			bl-input[inset]:has(>label:first-child),
+			bl-input[overlap]:has(>label:first-child),
+			bl-input[inset]:has(>a),
+			bl-input[overlap]:has(>a) {
+				padding-top:var(--bl-label-size);
+				margin-top:0;
+			}
+			bl-input[overlap]:has(>label:first-child),
+			bl-input[overlap]:has(>a) {
+				padding-top:0;
+			}
+			bl-input[inset] > label:first-child,
+			bl-input[overlap] > label:first-child,
+			bl-input[inset] > a,
+			bl-input[overlap] > a {
+				bottom:unset;
+			    margin-bottom:0;
+				top:0;
+				left:var(--bl-input-spacing-horizontal);
+				background:var(--bl-solid);
+			}
+			bl-input[inset] > a,
+			bl-input[overlap] > a {
+				left:unset;
+				right:var(--bl-input-spacing-horizontal);
+			}
+			bl-input[inset] > label:first-child,
+			bl-input[inset] > a {
+				align-items:flex-end;
+			}
+			bl-input[overlap] > label:first-child,
+			bl-input[overlap] > a {
+				top:calc(var(--bl-input-spacing-vertical)*-0.5);
+				font-size:var(--bl-font-size-s);
+				padding-left:4px;
+				padding-right:4px;
+				margin-left:-4px;
+				height:unset;
+			}
+
+
+	/* Floating placeholder components */
+		bl-input > select,
+		bl-input > [type=file] {
+			position:absolute;
+			left:0;
+			right:0;
+			bottom:0;
+			opacity:0;
+			width:100%;
+			height:var(--bl-input-size);
+			cursor:pointer;
+		}
+		bl-input > select + label,
+		bl-input > [type=file] + label {
+			pointer-events:none;
+			overflow:hidden;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			margin-right:var(--bl-input-spacing-horizontal);
+			position:relative;
+		}
+		bl-input > select + label::after,
+		bl-input > [type=file] + label::after {
+			display:block;
+			content:'';
+			border:2px solid var(--bl-solid-border-color-strong);
+			border-right:0;
+			border-top:0;
+			width:4px;
+			height:4px;
+			transform:rotate(-45deg);
+			margin-top:-3px;
+			position:absolute;
+			right:0;
+			top:50%;
+		}
+
+	/* Icon */
+		bl-input > i {
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			height:var(--bl-icon-size);
+			width:var(--bl-icon-size);
+			align-self:flex-start;
+			pointer-events:none;
+			margin:-1px 0; /* for compensate input border */
+			margin-right:calc(var(--bl-input-spacing-horizontal)*-1);
+			z-index:1000;
+			flex:none;
+		}
+		bl-input:has(>button) > i {
+			margin-right:calc(var(--bl-icon-size)*-1);
+		}
+		bl-input:has(>*:focus) > i {
+			color:var(--bl-primary);
+		}
+		bl-input[inset]:has(>label) > i {
+			top:var(--bl-label-size);
+		}
+		bl-input[inset]:has(>[type=checkbox]) > i,
+		bl-input[inset]:has(>[type=radio]) > i,
+		bl-input[overlap]:has(>[type=checkbox]) > i,
+		bl-input[overlap]:has(>[type=radio]) > i {
+			width:var(--bl-icon-size);
+		}
+
+	/* Textarea modificators */
+		bl-input > textarea {
+			height:var(--bl-textarea-height);
+		}
+		bl-input:has(>textarea),
+		bl-input[inset]:has(>label:first-child):has(>textarea), /* ???  */
+		bl-input[inset]:has(>a):has(>textarea) /* ???  */ {
+			height:unset;
+		}
+
+	/* Button modificators */
+		bl-input > button {
+			display:block;
+			text-align:center;
+			cursor:pointer;
+			font-weight:var(--bl-font-bold);
+		}
+		bl-input:has(>button) {
+			padding-left:0;
+		}
+
+	/* Checkbox & radio modificators */
+		bl-input > [type=checkbox],
+		bl-input > [type=radio] {
+			display:block;
+			cursor:pointer;
+			width:var(--bl-check-size);
+			height:var(--bl-check-size);
+			box-sizing:border-box;
+			box-shadow:var(--bl-shadow);
+			padding:0;
+			margin-left:var(--bl-input-spacing-horizontal);
+			border:1px solid var(--bl-solid-border-color-strong);
+			appearance:none;
+			-webkit-appearance:none;
+			flex:unset;
+		}
+		bl-input > [type=checkbox] {
+			border-radius:4px;
+		}
+		bl-input > [type=radio] {
+			border-radius:50%;
+		}
+		bl-input > [type=checkbox]:checked {
+			background:var(--bl-primary);
+			border-color:var(--bl-primary);
+			background-image:var(--bl-check-icon);
+		}
+		bl-input > [type=radio]:checked {
+			background:var(--bl-primary);
+			border-color:var(--bl-primary);
+			background-image:var(--bl-radio-icon);
+		}
+		bl-input:has(>[type=checkbox]),
+		bl-input:has(>[type=radio]) {
+			border-color:transparent;
+			box-shadow:none;
+		}
+
+		bl-input[inset]:has(>[type=checkbox]),
+		bl-input[inset]:has(>[type=radio]),
+		bl-input[overlap]:has(>[type=checkbox]),
+		bl-input[overlap]:has(>[type=radio]) {
+			border-color:var(--bl-solid-border-color-strong);
+			box-shadow:var(--bl-shadow);
+		}
+		bl-input:has(>[type=checkbox]:focus),
+		bl-input:has(>[type=radio]:focus) {
+			outline-color:transparent;
+		}
+		bl-input > [type=checkbox] + label,
+		bl-input > [type=radio] + label {
+			cursor:pointer;
+			line-height:1;
+			white-space:nowrap;
+			overflow:hidden;
+			text-overflow:ellipsis;
+		}
+		bl-input[inset] > [type=checkbox],
+		bl-input[inset] > [type=radio],
+		bl-input[overlap] > [type=checkbox],
+		bl-input[overlap] > [type=radio] {
+			margin-left:var(--bl-input-spacing-horizontal);
+		}
+
+	/* Input Blendings */
+		bl-input > bl-input {
+			border-color:transparent !important;
+			background:transparent !important;
+			box-shadow:unset;
+			border-radius:0;
+			outline-color:transparent !important;
+		}
+		bl-input:has(>bl-input) {
+			height:unset !important;
+		}
+		bl-input > bl-input + bl-input {
+			border-left-color:inherit !important;
+		}
+		bl-input[inline] > bl-input + bl-input {
+			border-left-color:transparent !important;
+		}
+		bl-input[column]:has(>bl-input) {
+			flex-direction:column;
+		}
+		bl-input[column] > bl-input {
+			width:100% !important;
+		}
+		bl-input[column] > bl-input + bl-input {
+			border-top-color:inherit !important;
+			border-left-color:transparent !important;
+		}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
