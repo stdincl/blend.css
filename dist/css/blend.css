@@ -19,8 +19,8 @@
 		solid:For components, is the default color for UI
 		primary:For main actions or elements that requires user atention
 		noun:For hight contrast elements, must be complementary of -solid-
-		destructive:For destructive elements, delete buttons,...
-		constructive:For constructive elements, create buttons,...
+		error:For error elements, delete buttons,...
+		success:For success elements, create buttons,...
 	*/
 	/* solid:theme */
 	--bl-solid:#ffffff;
@@ -34,15 +34,15 @@
 	--bl-solid-border-color-strong:#d1d7dd;
 
 	/* primary:theme */
-	--bl-primary:#0d75ff;
-	--bl-primary-light:#3c90ff;
-	--bl-primary-translucent:#0d75ff22;
-	--bl-primary-active:#0556c0;
+	--bl-primary:#4f46e5;
+	--bl-primary-light:#6366f1;
+	--bl-primary-translucent:#4f46e522;
+	--bl-primary-active:#6366f1;
 	--bl-primary-text:#d8e9ff;
 	--bl-primary-text-strong:#ffffff;
 	--bl-primary-text-secundary:#a8cdff;
-	--bl-primary-border-color:#0d75ff;
-	--bl-primary-border-color-strong:#0d75ff;
+	--bl-primary-border-color:#4f46e5;
+	--bl-primary-border-color-strong:#4f46e5;
 
 	/* noun:theme */
 	--bl-noun:#100f1e;
@@ -55,27 +55,27 @@
 	--bl-noun-border-color:#e7e8ea;
 	--bl-noun-border-color-strong:#d1d7dd;
 
-	/* constructive:theme */
-	--bl-constructive:#28d659;
-	--bl-constructive-light:#53de7a;
-	--bl-constructive-translucent:#28d65922;
-	--bl-constructive-active:#128755;
-	--bl-constructive-text:#d8ffe4;
-	--bl-constructive-text-strong:#ffffff;
-	--bl-constructive-text-secundary:#a8ffd5;
-	--bl-constructive-border-color:#1ac449;
-	--bl-constructive-border-color-strong:#149b3a;
+	/* success:theme */
+	--bl-success:#28d659;
+	--bl-success-light:#53de7a;
+	--bl-success-translucent:#28d65922;
+	--bl-success-active:#128755;
+	--bl-success-text:#d8ffe4;
+	--bl-success-text-strong:#ffffff;
+	--bl-success-text-secundary:#a8ffd5;
+	--bl-success-border-color:#1ac449;
+	--bl-success-border-color-strong:#149b3a;
 
-	/* destructive:theme */
-	--bl-destructive:#f81d5e;
-	--bl-destructive-light:#ff4a7f;
-	--bl-destructive-translucent:#f81d5e22;
-	--bl-destructive-active:#b41645;
-	--bl-destructive-text:#ffd8e1;
-	--bl-destructive-text-strong:#ffffff;
-	--bl-destructive-text-secundary:#ffa8a8;
-	--bl-destructive-border-color:#c41a22;
-	--bl-destructive-border-color-strong:#9b1428;
+	/* error:theme */
+	--bl-error:#f81d5e;
+	--bl-error-light:#ff4a7f;
+	--bl-error-translucent:#f81d5e22;
+	--bl-error-active:#b41645;
+	--bl-error-text:#ffd8e1;
+	--bl-error-text-strong:#ffffff;
+	--bl-error-text-secundary:#ffa8a8;
+	--bl-error-border-color:#c41a22;
+	--bl-error-border-color-strong:#9b1428;
 
 	/* Default UI settings */
 	--bl-wrap-size:90%;
@@ -83,7 +83,6 @@
 	--bl-wrap-size-limit-narrow:600px;
 
 	--bl-warning:#ff9800;
-	--bl-round:8px;
 	--bl-shadow:0 2px 5px rgba(0,0,0,0.06);
 	
 	--bl-font:'Inter';
@@ -94,14 +93,18 @@
 	--bl-font-size-xl:22px;
 	--bl-font-size:var(--bl-font-size-m);
 
-	--bl-transition-:0.3s;
-	--bl-transition--slow:0.6s;
-	--bl-transition--fast:0.15s;
+	--bl-transition:0.3s;
+	--bl-transition-slow:0.6s;
+	--bl-transition-fast:0.15s;
 
-	--bl-input-size:42px;
+	--bl-input-size:18px;
+	--bl-input-gap:10px;
+	--bl-input-spacing-vertical:12px;
 	--bl-input-spacing-horizontal:16px;
-	--bl-input-spacing-vertical:11px;
 	--bl-input-spacing:var(--bl-input-spacing-vertical) var(--bl-input-spacing-horizontal);
+	--bl-input-border-size:1px;
+	--bl-input-round:8px;
+	--bl-input-round-in:calc(var(--bl-input-round) - var(--bl-input-border-size));
 
 	--bl-icon-size:var(--bl-input-size);
 	--bl-icon-size-narrow:calc(var(--bl-input-size)*0.5);
@@ -113,7 +116,9 @@
 	--bl-check-size:18px;
 
 	--bl-check-icon:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
-	--bl-radio-icon:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e")
+	--bl-radio-icon:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+	--bl-select-icon:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='grey' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+	--bl-file-icon:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='grey' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
 
 }
 
@@ -156,20 +161,13 @@ bl-wrap {
 	}
 
 
-
-bl-nav {
-	display:flex;
-	flex-direction:row;
-	align-items:center;
-}
-
 /* 
 	Input component
 	<bl-input 
 		[inset] causes label incorporation
 		[overlap] causes label overlap
-		[error] for error coloring (destructive)
-		[success] for success coloring (constructive)
+		[error] for error coloring (error)
+		[success] for success coloring (success)
 		[static] disable expansion
 		[inline] removes division lines
 		[column] transforms layout in columns
@@ -177,27 +175,36 @@ bl-nav {
 */
 bl-input {
 	display:flex;
-	position:relative;
-	background:var(--bl-solid);
-	border:1px solid var(--bl-solid-border-color-strong);
-	border-radius:var(--bl-round);
-	box-shadow:var(--bl-shadow);
 	flex-direction:row;
 	align-items:center;
+	position:relative;
+	background:var(--bl-solid);
+	border:var(--bl-input-border-size) solid var(--bl-solid-border-color-strong);
+	border-radius:var(--bl-input-round);
+	box-shadow:var(--bl-shadow);
 	font-size:var(--bl-font-size-m);
-	height:var(--bl-input-size);
 	box-sizing:border-box;
 	width:100%;
+	padding-left:var(--bl-input-spacing-horizontal);
+	padding-right:var(--bl-input-spacing-horizontal);
+	gap:var(--bl-input-gap);
 }
-	bl-input[inset]:has(>label:first-child) {
-		height:calc(var(--bl-input-size) + var(--bl-label-size));
-	}
 	bl-input * {
 		font-family:var(--bl-font);
 		z-index:1000;
 	}
 	bl-input[static] {
 		width:unset;
+	}
+	bl-input[reverse]:has(>input),
+	bl-input[reverse]:has(>button),
+	bl-input[reverse]:has(>select),
+	bl-input[reverse]:has(>textarea),
+	bl-input[reverse] bl-input:has(>input),
+	bl-input[reverse] bl-input:has(>button),
+	bl-input[reverse] bl-input:has(>select),
+	bl-input[reverse] bl-input:has(>textarea) {
+		flex-direction:row-reverse;
 	}
 
 	/* Core component */
@@ -207,36 +214,37 @@ bl-input {
 		bl-input > [type=radio] + label,
 		bl-input > input,
 		bl-input > button,
+		bl-input > [type=button],
+		bl-input > [type=submit],
+		bl-input > [type=reset],
 		bl-input > textarea {
 			display:block;
-			padding:var(--bl-input-spacing);
+			padding:var(--bl-input-spacing-vertical) var(--bl-input-spacing-horizontal);
+			margin:0 calc(var(--bl-input-spacing-horizontal)*-1);
 			flex:1;
 			outline:none;
-			border-radius:var(--bl-round);
-			box-sizing:border-box;
+			border-radius:var(--bl-input-round-in);
+			box-sizing:content-box;
 			z-index:999;
 			color:var(--bl-solid-text);
 			width:100%;
-		}
-		bl-input:has(>*:focus),
-		bl-input > [type=checkbox]:focus,
-		bl-input > [type=radio]:focus {
-			outline:2px solid var(--bl-primary);
-			outline-offset:2px;
+		    line-height:1;
+		    height:var(--bl-input-size);
 		}
 
-		bl-input > button:hover {
-			background:var(--bl-solid-active);
-			outline:3px solid var(--bl-solid);
-			outline-offset:-3px;
+
+		bl-input:has(*:focus),
+		bl-input [type=checkbox]:focus,
+		bl-input [type=radio]:focus {
+			outline:2px solid var(--bl-primary);
+			outline-offset:2px;
 		}
 
 	/* Textinputs modificators */
 		/* Prefix */
 			bl-input:has(>[type=text]) > pre,
 			bl-input:has(>[type=password]) > pre {
-				padding-left:var(--bl-input-spacing-horizontal);
-				margin-right:calc(var(--bl-input-spacing-horizontal)* -0.6);
+				margin-right:calc(var(--bl-input-gap)*-0.5);
 				display:flex;
 				align-items:center;
 				pointer-events:none;
@@ -244,7 +252,6 @@ bl-input {
 		/* Key */
 			bl-input:has(>[type=text]) > kbd,
 			bl-input:has(>[type=password]) > kbd {
-				margin:0 calc(var(--bl-input-spacing-horizontal)*0.5);
 				padding:4px 6px;
 				pointer-events:none;
 				border:1px solid var(--bl-solid-border-color-strong);
@@ -267,7 +274,7 @@ bl-input {
 			pointer-events:none;
 			line-height:1;
 			height:var(--bl-label-size);
-			color:var(--bl-destructive);
+			color:var(--bl-error);
 		}
 		bl-input[error] > aside {
 			display:flex;
@@ -276,32 +283,32 @@ bl-input {
 			margin-bottom:var(--bl-label-size);
 		}
 		bl-input[error] {
-			border-color:var(--bl-destructive);
+			border-color:var(--bl-error);
 		}
-		bl-input[error]:has(>*:focus),
-		bl-input[error] > [type=checkbox]:focus,
-		bl-input[error] > [type=radio]:focus {
-			outline-color:var(--bl-destructive-translucent);
+		bl-input[error]:has(*:focus),
+		bl-input[error] [type=checkbox]:focus,
+		bl-input[error] [type=radio]:focus {
+			outline-color:var(--bl-error-translucent);
 		}
-		bl-input[error] > i,
-		bl-input[error]:has(>*:focus) > i,
-		bl-input[error] > label:first-child {
-			color:var(--bl-destructive);
+		bl-input[error] i,
+		bl-input[error]:has(*:focus) > i,
+		bl-input[error] label:first-child {
+			color:var(--bl-error);
 		}
 
-	/* Constructive */
+	/* success */
 		bl-input[success] {
-			border-color:var(--bl-constructive);
+			border-color:var(--bl-success);
 		}
-		bl-input[success]:has(>*:focus),
-		bl-input[success] > [type=checkbox]:focus,
-		bl-input[success] > [type=radio]:focus {
-			outline-color:var(--bl-constructive-translucent);
+		bl-input[success]:has(*:focus),
+		bl-input[success] [type=checkbox]:focus,
+		bl-input[success] [type=radio]:focus {
+			outline-color:var(--bl-success-translucent);
 		}
-		bl-input[success] > i,
-		bl-input[success]:has(>*:focus) > i,
-		bl-input[success] > label:first-child {
-			color:var(--bl-constructive);
+		bl-input[success] i,
+		bl-input[success]:has(*:focus) > i,
+		bl-input[success] label:first-child {
+			color:var(--bl-success);
 		}
 
 	/* Label */
@@ -337,46 +344,6 @@ bl-input {
 			bl-input:has(>a) {
 				margin-top:var(--bl-label-size);
 			}
-		/* [inset] > label modificators */
-			bl-input[inset]:has(>label:first-child),
-			bl-input[overlap]:has(>label:first-child),
-			bl-input[inset]:has(>a),
-			bl-input[overlap]:has(>a) {
-				padding-top:var(--bl-label-size);
-				margin-top:0;
-			}
-			bl-input[overlap]:has(>label:first-child),
-			bl-input[overlap]:has(>a) {
-				padding-top:0;
-			}
-			bl-input[inset] > label:first-child,
-			bl-input[overlap] > label:first-child,
-			bl-input[inset] > a,
-			bl-input[overlap] > a {
-				bottom:unset;
-			    margin-bottom:0;
-				top:0;
-				left:var(--bl-input-spacing-horizontal);
-				background:var(--bl-solid);
-			}
-			bl-input[inset] > a,
-			bl-input[overlap] > a {
-				left:unset;
-				right:var(--bl-input-spacing-horizontal);
-			}
-			bl-input[inset] > label:first-child,
-			bl-input[inset] > a {
-				align-items:flex-end;
-			}
-			bl-input[overlap] > label:first-child,
-			bl-input[overlap] > a {
-				top:calc(var(--bl-input-spacing-vertical)*-0.5);
-				font-size:var(--bl-font-size-s);
-				padding-left:4px;
-				padding-right:4px;
-				margin-left:-4px;
-				height:unset;
-			}
 
 
 	/* Floating placeholder components */
@@ -387,8 +354,10 @@ bl-input {
 			right:0;
 			bottom:0;
 			opacity:0;
+			margin:0;
 			width:100%;
-			height:var(--bl-input-size);
+			box-sizing:border-box;
+			height:calc( var(--bl-input-size) + var(--bl-input-spacing-vertical)*2 );
 			cursor:pointer;
 		}
 		bl-input > select + label,
@@ -397,23 +366,34 @@ bl-input {
 			overflow:hidden;
 			white-space:nowrap;
 			text-overflow:ellipsis;
-			margin-right:var(--bl-input-spacing-horizontal);
 			position:relative;
+			display:flex;
+			align-items:center;
 		}
 		bl-input > select + label::after,
 		bl-input > [type=file] + label::after {
+			display:inline-block;
+		    content:'';
+		    width:15px;
+		    height:1px;
+		}
+		bl-input > select + label::before,
+		bl-input > [type=file] + label::before {
 			display:block;
 			content:'';
-			border:2px solid var(--bl-solid-border-color-strong);
-			border-right:0;
-			border-top:0;
-			width:4px;
-			height:4px;
-			transform:rotate(-45deg);
-			margin-top:-3px;
+			width:calc(var(--bl-input-spacing-horizontal)*2);
 			position:absolute;
 			right:0;
-			top:50%;
+			top:0;
+			bottom:0;
+			background:var(--bl-solid) no-repeat left center;
+			background-size:var(--bl-input-size);
+		}
+		bl-input > select + label::before {
+			background-image:var(--bl-select-icon);
+		}
+		bl-input > [type=file] + label::before {
+			background-image:var(--bl-file-icon);
 		}
 
 	/* Icon */
@@ -421,50 +401,93 @@ bl-input {
 			display:flex;
 			align-items:center;
 			justify-content:center;
-			height:var(--bl-icon-size);
-			width:var(--bl-icon-size);
+			height:var(--bl-input-size);
+			width:var(--bl-check-size);
 			align-self:flex-start;
 			pointer-events:none;
-			margin:-1px 0; /* for compensate input border */
-			margin-right:calc(var(--bl-input-spacing-horizontal)*-1);
 			z-index:1000;
 			flex:none;
-		}
-		bl-input:has(>button) > i {
-			margin-right:calc(var(--bl-icon-size)*-1);
+			padding:var(--bl-input-spacing-vertical) 0;
 		}
 		bl-input:has(>*:focus) > i {
 			color:var(--bl-primary);
 		}
-		bl-input[inset]:has(>label) > i {
-			top:var(--bl-label-size);
+		bl-input > i + button,
+		bl-input > i + * + button,
+		bl-input > i + * + * + button,
+		bl-input > i + [type=button],
+		bl-input > i + * + [type=button],
+		bl-input > i + * + * + [type=button],
+		bl-input > i + [type=submit],
+		bl-input > i + * + [type=submit],
+		bl-input > i + * + * + [type=submit],
+		bl-input > i + [type=reset],
+		bl-input > i + * + [type=reset],
+		bl-input > i + * + * + [type=reset] {
+			margin-left:calc( ( var(--bl-input-spacing-horizontal) + var(--bl-input-gap) + var(--bl-check-size) )*-1 );
 		}
-		bl-input[inset]:has(>[type=checkbox]) > i,
-		bl-input[inset]:has(>[type=radio]) > i,
-		bl-input[overlap]:has(>[type=checkbox]) > i,
-		bl-input[overlap]:has(>[type=radio]) > i {
-			width:var(--bl-icon-size);
+		bl-input[reverse] i + button,
+		bl-input[reverse] i + * + button,
+		bl-input[reverse] i + * + * + button,
+		bl-input[reverse] i + [type=button],
+		bl-input[reverse] i + * + [type=button],
+		bl-input[reverse] i + * + * + [type=button],
+		bl-input[reverse] i + [type=submit],
+		bl-input[reverse] i + * + [type=submit],
+		bl-input[reverse] i + * + * + [type=submit],
+		bl-input[reverse] i + [type=reset],
+		bl-input[reverse] i + * + [type=reset],
+		bl-input[reverse] i + * + * + [type=reset] {
+			margin-left:calc(var(--bl-input-spacing-horizontal)*-1);
+			margin-right:calc( ( var(--bl-input-spacing-horizontal) + var(--bl-input-gap) + var(--bl-check-size) )*-1 );
 		}
 
 	/* Textarea modificators */
 		bl-input > textarea {
 			height:var(--bl-textarea-height);
-		}
-		bl-input:has(>textarea),
-		bl-input[inset]:has(>label:first-child):has(>textarea), /* ???  */
-		bl-input[inset]:has(>a):has(>textarea) /* ???  */ {
-			height:unset;
+			box-sizing:border-box;
+			line-height:var(--bl-input-size);
 		}
 
 	/* Button modificators */
-		bl-input > button {
+		bl-input > button,
+		bl-input > [type=button],
+		bl-input > [type=submit],
+		bl-input > [type=reset] {
 			display:block;
 			text-align:center;
 			cursor:pointer;
 			font-weight:var(--bl-font-bold);
 		}
-		bl-input:has(>button) {
-			padding-left:0;
+		bl-input > button:hover,
+		bl-input > [type=button]:hover,
+		bl-input > [type=submit]:hover,
+		bl-input > [type=reset]:hover {
+			background:var(--bl-solid-active);
+			outline:2px solid var(--bl-solid);
+			outline-offset:-2px;
+		}
+
+		bl-input:has([type=submit]) {
+			background:var(--bl-primary) !important;
+			color:var(--bl-primary-text);
+			border-color:var(--bl-primary);
+		}
+		bl-input:has(>[type=submit]) > [type=submit] {
+			color:inherit;
+		}
+		bl-input:has(>[type=submit]) > [type=submit]:hover {
+			background:var(--bl-primary-active);
+			outline-color:var(--bl-primary);
+			color:var(--bl-primary-text-strong);
+		}
+		bl-input:has(>[type=submit]) > label:first-child,
+		bl-input[overlap]:has(>[type=submit]) > label:first-child,
+		bl-input[overlap]:has(>[type=submit]) > a,
+		bl-input:has(>[type=submit]) > a,
+		bl-input:has(>[type=submit]) > i {
+			color:var(--bl-primary-text);
+			background:none;
 		}
 
 	/* Checkbox & radio modificators */
@@ -477,11 +500,11 @@ bl-input {
 			box-sizing:border-box;
 			box-shadow:var(--bl-shadow);
 			padding:0;
-			margin-left:var(--bl-input-spacing-horizontal);
 			border:1px solid var(--bl-solid-border-color-strong);
 			appearance:none;
 			-webkit-appearance:none;
 			flex:unset;
+			margin:0;
 		}
 		bl-input > [type=checkbox] {
 			border-radius:4px;
@@ -501,17 +524,10 @@ bl-input {
 		}
 		bl-input:has(>[type=checkbox]),
 		bl-input:has(>[type=radio]) {
-			border-color:transparent;
-			box-shadow:none;
+			--not-border-color:transparent;
+			--not-box-shadow:none;
 		}
 
-		bl-input[inset]:has(>[type=checkbox]),
-		bl-input[inset]:has(>[type=radio]),
-		bl-input[overlap]:has(>[type=checkbox]),
-		bl-input[overlap]:has(>[type=radio]) {
-			border-color:var(--bl-solid-border-color-strong);
-			box-shadow:var(--bl-shadow);
-		}
 		bl-input:has(>[type=checkbox]:focus),
 		bl-input:has(>[type=radio]:focus) {
 			outline-color:transparent;
@@ -519,34 +535,45 @@ bl-input {
 		bl-input > [type=checkbox] + label,
 		bl-input > [type=radio] + label {
 			cursor:pointer;
-			line-height:1;
 			white-space:nowrap;
 			overflow:hidden;
 			text-overflow:ellipsis;
-		}
-		bl-input[inset] > [type=checkbox],
-		bl-input[inset] > [type=radio],
-		bl-input[overlap] > [type=checkbox],
-		bl-input[overlap] > [type=radio] {
-			margin-left:var(--bl-input-spacing-horizontal);
+			display:flex;
+    		align-items:center;
 		}
 
 	/* Input Blendings */
 		bl-input > bl-input {
-			border-color:transparent !important;
+			--not-border-color:transparent !important;
 			background:transparent !important;
 			box-shadow:unset;
 			border-radius:0;
+			border-width:0;
 			outline-color:transparent !important;
+			align-self:flex-end;
+		}
+		bl-input > bl-input:first-child {
+			border-top-left-radius:inherit;
+			border-bottom-left-radius:inherit;
+		}
+		bl-input > bl-input:last-child {
+			border-top-right-radius:inherit;
+			border-bottom-right-radius:inherit;
 		}
 		bl-input:has(>bl-input) {
 			height:unset !important;
+			padding-left:0;
+			padding-right:0;
+			gap:0;
 		}
 		bl-input > bl-input + bl-input {
 			border-left-color:inherit !important;
+			border-left-width:1px;
 		}
-		bl-input[inline] > bl-input + bl-input {
-			border-left-color:transparent !important;
+		bl-input[inline] > bl-input + bl-input,
+		bl-input[inline][column] > bl-input + bl-input {
+			border-left-width:0 !important;
+			border-top-width:0 !important;
 		}
 		bl-input[column]:has(>bl-input) {
 			flex-direction:column;
@@ -556,7 +583,59 @@ bl-input {
 		}
 		bl-input[column] > bl-input + bl-input {
 			border-top-color:inherit !important;
+			border-top-width:1px !important;
 			border-left-color:transparent !important;
+		}
+
+	/* [inset] modificators */ 
+		bl-input[inset]:has(>label:first-child),
+		bl-input[inset]:has(>a),
+		bl-input[inset]:has(label:first-child) bl-input:has(>label:first-child),
+		bl-input[inset]:has(label:first-child) bl-input:has(>a),
+		bl-input[inset]:has(a) bl-input:has(>label:first-child),
+		bl-input[inset]:has(a) bl-input:has(>a) {
+			padding-top:var(--bl-label-size);
+			margin-top:0;
+		}
+		bl-input[inset] label:first-child,
+		bl-input[inset] a {
+			align-items:flex-end;
+			top:0;
+		}
+
+	/* [overlap] > label modificators */
+		bl-input[overlap]:has(label:first-child),
+		bl-input[overlap]:has(a),
+		bl-input[overlap]:has(label:first-child) bl-input,
+		bl-input[overlap]:has(a) bl-input {
+			padding-top:0;
+			margin-top:0;
+		}
+		bl-input[overlap] label:first-child,
+		bl-input[overlap] a {
+			top:calc(var(--bl-font-size-s)*-0.5);
+			font-size:var(--bl-font-size-s);
+			padding-left:4px;
+			padding-right:4px;
+			margin-left:-4px;
+			height:unset;
+			background:var(--bl-solid);
+		}
+	/* [inset+overlap] modificators */
+		bl-input[overlap] label:first-child,
+		bl-input[inset] label:first-child {
+			left:var(--bl-input-spacing-horizontal);
+		}
+		bl-input[overlap] a,
+		bl-input[inset] a {
+			right:var(--bl-input-spacing-horizontal);
+		}
+		bl-input[overlap]:has([type=checkbox]),
+		bl-input[overlap]:has([type=radio]),
+		bl-input[inset]:has(>[type=checkbox]),
+		bl-input[inset]:has(>[type=radio]) {
+			border-color:var(--bl-solid-border-color-strong);
+			box-shadow:var(--bl-shadow);
 		}
 
 	

@@ -13,36 +13,128 @@
 <body>
 
 
-	<bl-wrap narrow>
+	<bl-wrap>
 
 
 		<blend-inputs>
+
+
+				<bl-input>
+					<label>Tipo de contenido</label>
+					<bl-input>
+						<bl-input>
+							<input type="radio" name="a" />
+							<label>[type=radio]</label>
+						</bl-input>
+						<bl-input>
+							<input type="radio" name="a" />
+							<label>[type=radio]</label>
+						</bl-input>
+						<bl-input>
+							<input type="radio" name="a" />
+							<label>[type=radio]</label>
+						</bl-input>
+					</bl-input>
+					<bl-input>
+						<bl-input>
+							<input type="radio" name="b" />
+							<label>[type=radio]</label>
+						</bl-input>
+						<bl-input>
+							<input type="radio" name="b" />
+							<label>[type=radio]</label>
+						</bl-input>
+						<bl-input>
+							<input type="radio" name="b" />
+							<label>[type=radio]</label>
+						</bl-input>
+					</bl-input>
+				</bl-input>
+
+
+			<h1>Buttons</h1>
+				<bl-input overlap>
+					<aside>Este es un mensaje de error grandísimo</aside>
+					<i class="fi fi-rr-user"></i>
+					<input type="submit" value="type:submit" placeholder="type=text" />
+				</bl-input>
+				<bl-input overlap>
+					<label>Label</label>
+					<a href="#">opcional</a>
+					<aside>Este es un mensaje de error grandísimo</aside>
+					<i class="fi fi-rr-user"></i>
+					<input type="button" value="type:button" placeholder="type=text" />
+				</bl-input>
+				<bl-input overlap>
+					<label>Label</label>
+					<a href="#">opcional</a>
+					<aside>Este es un mensaje de error grandísimo</aside>
+					<i class="fi fi-rr-user"></i>
+					<input type="reset" value="type:reset" placeholder="type=text" />
+				</bl-input>
+
+				<bl-input>
+					<bl-input overlap>
+						<aside>Este es un mensaje de error grandísimo</aside>
+						<i class="fi fi-rr-user"></i>
+						<input type="button" value="type:submit" placeholder="type=text" />
+					</bl-input>
+					<bl-input overlap>
+						<label>Label</label>
+						<a href="#">opcional</a>
+						<aside>Este es un mensaje de error grandísimo</aside>
+						<i class="fi fi-rr-user"></i>
+						<input type="button" value="type:button" placeholder="type=text" />
+					</bl-input>
+					<bl-input overlap>
+						<label>Label</label>
+						<a href="#">opcional</a>
+						<aside>Este es un mensaje de error grandísimo</aside>
+						<i class="fi fi-rr-user"></i>
+						<input type="reset" value="type:reset" placeholder="type=text" />
+					</bl-input>
+				</bl-input>
 			
 			<h1>Blendings</h1>
 
-			<bl-input overlap success>
-				<label>Label</label>
-				<a href="#">opcional</a>
-				<bl-input static>
+			<bl-input inset reverse> 
+				<bl-input>
+					<label>inset</label>
 					<i class="fi fi-rr-user"></i>
 					<pre>https://</pre>
 					<input type="text" placeholder="type=text" />
 					<kbd>⌘K</kbd>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
-				<bl-input success>
-					<i class="fi fi-rr-user"></i>
-					<pre>https://</pre>
-					<input type="text" placeholder="type=text" />
-					<kbd>⌘K</kbd>
-					<aside>Este es un mensaje de error grandísimo</aside>
+				<bl-input>
+					<bl-input>
+						<label>Label</label>
+						<a href="#">opcional</a>
+						<aside>Este es un mensaje de error grandísimo</aside>
+						<i class="fi fi-rr-user"></i>
+						<input type="button" value="type:submit" placeholder="type=text" />
+					</bl-input>
+					<bl-input>
+						<label>Label</label>
+						<a href="#">opcional</a>
+						<aside>Este es un mensaje de error grandísimo</aside>
+						<i class="fi fi-rr-user"></i>
+						<input type="button" value="type:button" placeholder="type=text" />
+					</bl-input>
+					<bl-input>
+						<label>Label</label>
+						<a href="#">opcional</a>
+						<aside>Este es un mensaje de error grandísimo</aside>
+						<i class="fi fi-rr-user"></i>
+						<input type="reset" value="type:reset" placeholder="type=text" />
+					</bl-input>
 				</bl-input>
+				<aside>Este es un mensaje de error grandísimo</aside>
 			</bl-input>
 
 			<bl-input column>
 				<label>Label</label>
 				<a href="#">opcional</a>
-				<bl-input >
+				<bl-input>
 					<i class="fi fi-rr-user"></i>
 					<pre>https://</pre>
 					<input type="text" placeholder="type=text" />
@@ -59,7 +151,7 @@
 
 			<bl-input column>
 				<label>Account login</label>
-				<bl-input >
+				<bl-input>
 					<i class="fi fi-rr-user"></i>
 					<input type="text" placeholder="user" />
 				</bl-input>
@@ -69,23 +161,32 @@
 				</bl-input>
 			</bl-input>
 
-			<bl-input column>
+			<bl-input column inline>
+				<label>Account login</label>
+				<a href="">Register</a>
 				<bl-input inset>
 					<label>User</label>
 					<i class="fi fi-rr-user"></i>
 					<input type="text" placeholder="user" />
 				</bl-input>
-				<bl-input inset>
-					<label>Pass</label>
-					<i class="fi fi-rr-lock"></i>
-					<input type="password" placeholder="pass" />
+				<bl-input>
+					<bl-input inset>
+						<label>Pass</label>
+						<i class="fi fi-rr-lock"></i>
+						<input type="password" placeholder="pass" />
+					</bl-input>
+					<bl-input static>
+						<input type="checkbox" />
+						<label>Mantener sesion activa</label>
+					</bl-input>
 				</bl-input>
 			</bl-input>
 
 			<bl-input>
 				<label>Label</label>
 				<a href="#">opcional</a>
-				<bl-input >
+				<aside>Este es un mensaje de error grandísimo</aside>
+				<bl-input>
 					<i class="fi fi-rr-user"></i>
 					<pre>https://</pre>
 					<input type="text" placeholder="type=text" />
@@ -103,7 +204,8 @@
 			<bl-input inline>
 				<label>Label</label>
 				<a href="#">opcional</a>
-				<bl-input >
+				<aside>Este es un mensaje de error grandísimo</aside>
+				<bl-input>
 					<i class="fi fi-rr-user"></i>
 					<pre>https://</pre>
 					<input type="text" placeholder="type=text" />
@@ -122,29 +224,29 @@
 				<bl-input overlap success>
 					<label>Label</label>
 					<a href="#">opcional</a>
+					<aside>Este es un mensaje de error grandísimo</aside>
 					<i class="fi fi-rr-user"></i>
 					<pre>https://</pre>
 					<input type="text" placeholder="type=text" />
 					<kbd>⌘K</kbd>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input overlap>
 					<label>Label</label>
 					<a>opcional</a>
+					<aside>Este es un mensaje de error grandísimo</aside>
 					<i class="fi fi-rr-user"></i>
 					<pre>https://</pre>
 					<input type="password" placeholder="type=text" />
 					<kbd>⌘K</kbd>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input overlap>
 					<label>Label</label>
 					<a>opcional</a>
+					<aside>Este es un mensaje de error grandísimo</aside>
 					<i class="fi fi-rr-user"></i>
 					<button>button</button>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input overlap>
@@ -155,7 +257,6 @@
 						<option>option</option>
 					</select>
 					<label>select</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input overlap>
@@ -164,7 +265,6 @@
 					<i class="fi fi-rr-user"></i>
 					<input type="file" />
 					<label>[type=file]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input overlap>
@@ -173,7 +273,6 @@
 					<i class="fi fi-rr-user"></i>
 					<input type="checkbox" />
 					<label>[type=checkbox]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input overlap>
@@ -182,7 +281,6 @@
 					<i class="fi fi-rr-user"></i>
 					<input type="radio" />
 					<label>[type=radio]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input overlap>
@@ -190,7 +288,6 @@
 					<a>opcional</a>
 					<i class="fi fi-rr-user"></i>
 					<textarea>textarea</textarea>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input> 
 
 			<h1>labeled[overlap]</h1>
@@ -198,14 +295,12 @@
 					<label>Label</label>
 					<a>opcional</a>
 					<input type="text" placeholder="type=text" />
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input overlap>
 					<label>Label</label>
 					<a>opcional</a>
 					<button>button</button>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input overlap>
@@ -215,7 +310,6 @@
 						<option>option</option>
 					</select>
 					<label>select</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input overlap>
@@ -223,14 +317,12 @@
 					<a>opcional</a>
 					<input type="file" />
 					<label>[type=file]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input overlap>
 					<label>Label</label>
 					<input type="checkbox" />
 					<label>[type=checkbox]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input overlap>
@@ -238,14 +330,12 @@
 					<a>opcional</a>
 					<input type="radio" />
 					<label>[type=radio]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input overlap>
 					<label>Label</label>
 					<a>opcional</a>
 					<textarea>textarea</textarea>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input> 
 
 			<h1>labeled[inset] + icon</h1>
@@ -255,7 +345,6 @@
 					<i class="fi fi-rr-user"></i>
 					<pre>https://</pre>
 					<input type="text" placeholder="type=text" />
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input inset>
@@ -263,7 +352,6 @@
 					<a>opcional</a>
 					<i class="fi fi-rr-user"></i>
 					<button>button</button>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input inset>
@@ -274,7 +362,6 @@
 						<option>option</option>
 					</select>
 					<label>select</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input inset>
@@ -283,7 +370,6 @@
 					<i class="fi fi-rr-user"></i>
 					<input type="file" />
 					<label>[type=file]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input inset>
@@ -292,7 +378,6 @@
 					<i class="fi fi-rr-user"></i>
 					<input type="checkbox" />
 					<label>[type=checkbox]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input inset>
@@ -301,7 +386,6 @@
 					<i class="fi fi-rr-user"></i>
 					<input type="radio" />
 					<label>[type=radio]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input inset>
@@ -309,7 +393,6 @@
 					<a>opcional</a>
 					<i class="fi fi-rr-user"></i>
 					<textarea>textarea</textarea>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input> 
 
 			
@@ -319,14 +402,12 @@
 					<a>opcional</a>
 					<pre>https://</pre>
 					<input type="text" placeholder="type=text 2" />
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input inset>
 					<label>Label</label>
 					<a>opcional</a>
 					<button>button</button>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input inset>
@@ -336,7 +417,6 @@
 						<option>option</option>
 					</select>
 					<label>select</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input inset>
@@ -344,7 +424,6 @@
 					<a>opcional</a>
 					<input type="file" />
 					<label>[type=file]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input inset>
@@ -352,7 +431,6 @@
 					<a>opcional</a>
 					<input type="checkbox" />
 					<label>[type=checkbox]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input inset>
@@ -360,14 +438,12 @@
 					<a>opcional</a>
 					<input type="radio" />
 					<label>[type=radio]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input inset>
 					<label>Label</label>
 					<a>opcional</a>
 					<textarea>textarea</textarea>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input> 
 
 			<h1>labeled</h1>
@@ -375,7 +451,6 @@
 					<label>Label</label>
 					<i class="fi fi-rr-user"></i>
 					<input type="text" placeholder="type=text" />
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input>
@@ -383,7 +458,6 @@
 					<a>opcional</a>
 					<i class="fi fi-rr-user"></i>
 					<button>button</button>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input>
@@ -394,7 +468,6 @@
 						<option>option</option>
 					</select>
 					<label>select</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input>
@@ -403,7 +476,6 @@
 					<i class="fi fi-rr-user"></i>
 					<input type="file" />
 					<label>[type=file]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input>
@@ -412,7 +484,6 @@
 					<i class="fi fi-rr-user"></i>
 					<input type="checkbox" />
 					<label>[type=checkbox]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input>
@@ -421,7 +492,6 @@
 					<i class="fi fi-rr-user"></i>
 					<input type="radio" />
 					<label>[type=radio]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input>
@@ -429,20 +499,59 @@
 					<a>opcional</a>
 					<i class="fi fi-rr-user"></i>
 					<textarea>textarea</textarea>
-					<aside>Este es un mensaje de error grandísimo</aside>
+				</bl-input> 
+
+			<h1>labeled:x</h1>
+				<bl-input>
+					<label>opcional</label>
+					<input type="text" placeholder="type=text" />
+				</bl-input>
+
+				<bl-input>
+					<label>opcional</label>
+					<button>button</button>
+				</bl-input>
+				
+				<bl-input>
+					<label>opcional</label>
+					<select>
+						<option>option</option>
+					</select>
+					<label>select</label>
+				</bl-input>
+				
+				<bl-input>
+					<label>opcional</label>
+					<input type="file" />
+					<label>[type=file]</label>
+				</bl-input>
+				
+				<bl-input>
+					<label>opcional</label>
+					<input type="checkbox" />
+					<label>[type=checkbox]</label>
+				</bl-input>
+				
+				<bl-input>
+					<label>opcional</label>
+					<input type="radio" />
+					<label>[type=radio]</label>
+				</bl-input>
+
+				<bl-input>
+					<label>opcional</label>
+					<textarea>textarea</textarea>
 				</bl-input> 
 
 			<h1>un:labeled</h1>
 				<bl-input>
 					<a>opcional</a>
 					<input type="text" placeholder="type=text" />
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input>
 					<a>opcional</a>
 					<button>button</button>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input>
@@ -451,45 +560,38 @@
 						<option>option</option>
 					</select>
 					<label>select</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input>
 					<a>opcional</a>
 					<input type="file" />
 					<label>[type=file]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input>
 					<a>opcional</a>
 					<input type="checkbox" />
 					<label>[type=checkbox]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input>
 					<a>opcional</a>
 					<input type="radio" />
 					<label>[type=radio]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input>
 					<a>opcional</a>
 					<textarea>textarea</textarea>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input> 
 
 			<h1>un:labeled</h1>
 				<bl-input>
 					<input type="text" placeholder="type=text" />
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input>
 					<button>button</button>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input>
@@ -497,30 +599,25 @@
 						<option>option</option>
 					</select>
 					<label>select</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input>
 					<input type="file" />
 					<label>[type=file]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input>
 					<input type="checkbox" />
 					<label>[type=checkbox]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 				
 				<bl-input>
 					<input type="radio" />
 					<label>[type=radio]</label>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input>
 
 				<bl-input>
 					<textarea>textarea</textarea>
-					<aside>Este es un mensaje de error grandísimo</aside>
 				</bl-input> 
 
 		</blend-inputs>
