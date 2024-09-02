@@ -683,6 +683,17 @@ bl-input {
 			content:'';
 			height:4px;
 		}
+		bl-list > * {
+			border-color:transparent;
+			box-shadow:none;
+		}
+		bl-list[divided] {}
+			bl-list[divided] > * {
+				border-bottom:1px solid var(--bl-solid-border-color);
+			}
+			bl-list[divided] > *:last-child {
+				border-bottom-width:0;
+			}
 	/* Item */
 		bl-item {
 			cursor:pointer;
