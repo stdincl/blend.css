@@ -6,6 +6,7 @@ bl-wrap {
 	overflow:auto;
 	padding:40px 10px;
 	box-sizing:border-box;
+	max-width:400px;
 }
 
 blend-inputs {
