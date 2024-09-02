@@ -165,6 +165,7 @@ bl-wrap {
 /* 
 	Input component
 	<bl-input 
+		[clean] removes outline and padding for checkbox and radio
 		[inset] causes label incorporation
 		[overlap] causes label overlap
 		[error] for error coloring (error)
@@ -523,8 +524,8 @@ bl-input {
 			border-color:var(--bl-primary);
 			background-image:var(--bl-radio-icon);
 		}
-		bl-input:has(>[type=checkbox]),
-		bl-input:has(>[type=radio]) {
+		bl-input[clean]:has(>[type=checkbox]),
+		bl-input[clean]:has(>[type=radio]) {
 			border-color:transparent;
 			box-shadow:none;
 			padding-left:0;
@@ -637,13 +638,6 @@ bl-input {
 		bl-input[inset]:has(>[type=radio]) {
 			border-color:var(--bl-solid-border-color-strong);
 			box-shadow:var(--bl-shadow);
-		}
-		bl-input[overlap]:has(>[type=checkbox]),
-		bl-input[overlap]:has(>[type=radio]),
-		bl-input[inset]:has(>[type=checkbox]),
-		bl-input[inset]:has(>[type=radio]) {
-			padding-left:var(--bl-input-spacing-horizontal);
-    		padding-right:var(--bl-input-spacing-horizontal);
 		}
 
 
