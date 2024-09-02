@@ -13,7 +13,9 @@ Blend.css works around a few key components that can be nested and parameterized
 
 All components are configurable using HTML tags that begin with the `bl-` prefix and can be configured using their properties.
 
-- Inputs
+Although many core components use the `bl-` prefix, some internal elements use standard HTML in order to minimize the weight of the library. In the case of `bl-input`, its internal elements are used to create parts that most inputs use, such as **labels**, **icons**, **links**, and others.
+
+- [Inputs](#inputs)
   - Text
   - Textarea
   - Button
@@ -27,4 +29,7 @@ All components are configurable using HTML tags that begin with the `bl-` prefix
 - Avatar
 
 
+## Inputs
+
+The `<bl-input>` component is the core of inputs, buttons and form selectors. With it you can create text fields, textarea, button, checkbox, radio, file and select inputs. 
 
