@@ -525,10 +525,11 @@ bl-input {
 		}
 		bl-input:has(>[type=checkbox]),
 		bl-input:has(>[type=radio]) {
-			--not-border-color:transparent;
-			--not-box-shadow:none;
+			border-color:transparent;
+			box-shadow:none;
+			padding-left:0;
+    		padding-right:0;
 		}
-
 		bl-input:has(>[type=checkbox]:focus),
 		bl-input:has(>[type=radio]:focus) {
 			outline-color:transparent;
@@ -545,7 +546,6 @@ bl-input {
 
 	/* Input Blendings */
 		bl-input > bl-input {
-			--not-border-color:transparent !important;
 			background:transparent !important;
 			box-shadow:unset;
 			border-radius:0;
@@ -637,6 +637,13 @@ bl-input {
 		bl-input[inset]:has(>[type=radio]) {
 			border-color:var(--bl-solid-border-color-strong);
 			box-shadow:var(--bl-shadow);
+		}
+		bl-input[overlap]:has(>[type=checkbox]),
+		bl-input[overlap]:has(>[type=radio]),
+		bl-input[inset]:has(>[type=checkbox]),
+		bl-input[inset]:has(>[type=radio]) {
+			padding-left:var(--bl-input-spacing-horizontal);
+    		padding-right:var(--bl-input-spacing-horizontal);
 		}
 
 
