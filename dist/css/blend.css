@@ -166,6 +166,7 @@ bl-wrap {
 	<bl-input 
 		[clean] removes outline and padding for checkbox and radio
 		[inset] causes label incorporation
+		[reverse] causes reverse layout
 		[overlap] causes label overlap
 		[error] for error coloring (error)
 		[success] for success coloring (success)
