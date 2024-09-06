@@ -16,7 +16,7 @@ All components are configurable using HTML tags that begin with the `bl-` prefix
 Although many core components use the `bl-` prefix, some internal elements use standard HTML in order to minimize the weight of the library. In the case of `bl-input`, its internal elements are used to create parts that most inputs use, such as **labels**, **icons**, **links**, and others.
 
 - [Inputs](#inputs)
-  - Text
+  - Text (and Date, Number,...)
   - Textarea
   - Button
   - Checkbox
@@ -114,6 +114,34 @@ You can select the modifier you want by simply assigning the corresponding prope
 | layout		| **column**	| transforms layout to columns	| [Blended components](#blended)	| root input	| ![](docs/input/column.png) 		|
 
 
+### File and Select element
+
+The `[type=file]` and `select` elements have a special treatment to mask and generalize their operation in different browsers. You should only always consider adding a `label` element as the next sibling, this `label` element will behave graphically as the `[type=file]` or `select` field as appropriate.
+
+You will need to make sure to change the `label` text when the `change` event of the `[type=file]` or `select` field is triggered.
+
+You can optionally choose to import and implement the pollyfills from `blend.js`
+
+```html
+<bl-input>
+	<select>
+		<option value="1">Option A</option>
+		<option value="2">Option V</option>
+		<option value="3">Option C</option>
+	</select>
+	<label>Option A</label> <!-- this label is required for select -->
+</bl-input>
+```
+![](docs/select/select.png)
+
+
+```html
+<bl-input>
+	<input type="file" />
+	<label>Choose your file</label> <!-- this label is required [type=file] -->
+</bl-input>
+```
+![](docs/file/file.png)
 
 ### Blended components
 
@@ -212,5 +240,4 @@ In a more real-world example, a login form could be coded like this:
 ```
 
 ![](docs/input/signin.png)
-
 
