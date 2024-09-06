@@ -102,25 +102,24 @@ You can select the modifier you want by simply assigning the corresponding prope
 | status		| **success**	| Success coloring				| ![](docs/input/success.png) 		|
 | status		| **disabled**	| Disabled coloring				| ![](docs/input/disabled.png) 		|
 
-| **Type**		| **Property**	| Effect						| Availability 						| 									|
-| -				| -				| -								| -									| - 								|
-| auxiliary		| **clean**		| Removes outline and paddings	| `checkbox` `radio`				| ![](docs/input/clean.png) |
-| auxiliary		| **reverse**	| Reverses de input composition | `any`								| ![](docs/input/reverse.png) |
-
 | **Type**		| **Property**	| Effect						| Availability 						| Target		| 									|
 | -				| -				| -								| -									| -				| - 								|
 | layout		| **static**	| disable expansion				| [Blended components](#blended)	| nested input	| ![](docs/input/static.png) 		|
 | layout		| **inline**	| removes division lines		| [Blended components](#blended)	| root input	| ![](docs/input/inline.png) 		|
 | layout		| **column**	| transforms layout to columns	| [Blended components](#blended)	| root input	| ![](docs/input/column.png) 		|
 
+| **Type**		| **Property**	| Effect						| Availability 						| 									|
+| -				| -				| -								| -									| - 								|
+| auxiliary		| **clean**		| Removes outline and paddings	| `checkbox` `radio`				| ![](docs/input/clean.png) |
+| auxiliary		| **reverse**	| Reverses de input composition | `any`								| ![](docs/input/reverse.png) |
+| auxiliary		| **required-label**	| If `bl-input` contains an [required] element <u>and</u> has the **required-label** defined, displays the **required-label** at the bottom right corner | `any`								| ![](docs/input/required-label.png) |
+
 
 ### File and Select element
 
 The `[type=file]` and `select` elements have a special treatment to mask and generalize their operation in different browsers. You should only always consider adding a `label` element as the next sibling, this `label` element will behave graphically as the `[type=file]` or `select` field as appropriate.
 
-You will need to make sure to change the `label` text when the `change` event of the `[type=file]` or `select` field is triggered.
-
-You can optionally choose to import and implement the pollyfills from `blend.js`
+You will need to make sure to change the `label` text when the `change` event of the `[type=file]` or `select` field is triggered, or you can optionally choose to import and implement the pollyfills from `blend.js`
 
 ```html
 <bl-input>

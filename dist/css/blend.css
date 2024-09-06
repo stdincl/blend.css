@@ -313,6 +313,22 @@ bl-input {
 			color:var(--bl-success);
 		}
 
+	/* required */
+	bl-input:has(>[required])::before {
+		display:block;
+		content:attr(required-label);
+		position:absolute;
+		bottom:calc(var(--bl-font-size-s)*-0.5);
+		font-size:var(--bl-font-size-s);
+		right:var(--bl-input-spacing-horizontal);
+		padding-left:4px;
+		padding-right:4px;
+		margin-left:-4px;
+		height:unset;
+		background:var(--bl-solid);
+		z-index:101;
+	}
+
 	/* Label */
 		bl-input > label:first-child,
 		bl-input > a {
