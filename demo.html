@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css" />
 	<link rel="stylesheet" type="text/css" href="dist/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="dist/css/blend.css" />
-	<link rel="stylesheet" type="text/css" href="dist/css/demos.css" />
 </head>
 <body>
 
@@ -837,5 +836,125 @@
 
 	</bl-wrap>
 
+	<style type="text/css">
+		
+		bl-wrap {
+			overflow:auto;
+			padding:40px 10px;
+			box-sizing:border-box;
+			max-width:400px;
+		}
+
+		blend-inputs {
+			padding:30px 0;
+			display:flex;
+			flex-direction:column;
+			gap:30px;
+		}
+
+		blend-palettes {
+			display:flex;
+			flex-direction:column;
+			gap:10px;
+			padding:30px 0;
+		}
+		blend-palette {
+			display:flex;
+			flex-direction:column;
+			border-radius:var(--bl-round);
+			box-shadow:var(--bl-shadow);
+			padding:30px;
+			gap:10px;
+			border:1px solid transparent;
+		}
+			blend-palette > div {
+				display:flex;
+				flex-direction:row;
+				gap:10px;
+				color:inherit;
+			}
+				blend-palette > div > * {
+					display:block;
+					flex:1;
+					text-align:center;
+					padding:10px;
+					border-radius:var(--bl-round);
+					box-shadow:var(--bl-shadow);
+					border:1px solid transparent;
+					font-weight:var(--bl-font-bold);
+					color:inherit;
+				}
+			blend-palette > strong {
+				display:flex;
+				padding:20px;
+				border-radius:var(--bl-round);
+			}
+
+
+		blend-palette[solid] {
+			background:var(--bl-solid);
+			border-color:var(--bl-solid-border-color);
+			color:var(--bl-solid-text)
+		}
+			blend-palette[solid] > h2 		{ color:var(--bl-solid-text-strong); }
+			blend-palette[solid] > p 		{ color:var(--bl-solid-text); }
+			blend-palette[solid] > span 	{ color:var(--bl-solid-text-secundary); }
+			blend-palette[solid] > div > a 	{ background:var(--bl-solid-active); }
+			blend-palette[solid] > div > b 	{ background:var(--bl-solid-translucent); }
+			blend-palette[solid] > div > i 	{ background:var(--bl-solid-light); }
+			blend-palette[solid] > strong 	{ background:var(--bl-solid-light); }
+
+		blend-palette[primary] {
+			background:var(--bl-primary);
+			border-color:var(--bl-primary-border-color);
+			color:var(--bl-primary-text)
+		}
+			blend-palette[primary] > h2 		{ color:var(--bl-primary-text-strong); }
+			blend-palette[primary] > p 		{ color:var(--bl-primary-text); }
+			blend-palette[primary] > span 	{ color:var(--bl-primary-text-secundary); }
+			blend-palette[primary] > div > a 	{ background:var(--bl-primary-active); }
+			blend-palette[primary] > div > b 	{ background:var(--bl-primary-translucent); }
+			blend-palette[primary] > div > i 	{ background:var(--bl-primary-light); }
+			blend-palette[primary] > strong 	{ background:var(--bl-primary-light); }
+
+		blend-palette[noun] {
+			background:var(--bl-noun);
+			border-color:var(--bl-noun-border-color);
+			color:var(--bl-noun-text)
+		}
+			blend-palette[noun] > h2 		{ color:var(--bl-noun-text-strong); }
+			blend-palette[noun] > p 		{ color:var(--bl-noun-text); }
+			blend-palette[noun] > span 	{ color:var(--bl-noun-text-secundary); }
+			blend-palette[noun] > div > a 	{ background:var(--bl-noun-active); }
+			blend-palette[noun] > div > b 	{ background:var(--bl-noun-translucent); }
+			blend-palette[noun] > div > i 	{ background:var(--bl-noun-light); }
+			blend-palette[noun] > strong 	{ background:var(--bl-noun-light); }
+
+		blend-palette[constructive] {
+			background:var(--bl-constructive);
+			border-color:var(--bl-constructive-border-color);
+			color:var(--bl-constructive-text)
+		}
+			blend-palette[constructive] > h2 		{ color:var(--bl-constructive-text-strong); }
+			blend-palette[constructive] > p 		{ color:var(--bl-constructive-text); }
+			blend-palette[constructive] > span 	{ color:var(--bl-constructive-text-secundary); }
+			blend-palette[constructive] > div > a 	{ background:var(--bl-constructive-active); }
+			blend-palette[constructive] > div > b 	{ background:var(--bl-constructive-translucent); }
+			blend-palette[constructive] > div > i 	{ background:var(--bl-constructive-light); }
+			blend-palette[constructive] > strong 	{ background:var(--bl-constructive-light); }
+
+		blend-palette[destructive] {
+			background:var(--bl-destructive);
+			border-color:var(--bl-destructive-border-color);
+			color:var(--bl-destructive-text)
+		}
+			blend-palette[destructive] > h2 		{ color:var(--bl-destructive-text-strong); }
+			blend-palette[destructive] > p 		{ color:var(--bl-destructive-text); }
+			blend-palette[destructive] > span 	{ color:var(--bl-destructive-text-secundary); }
+			blend-palette[destructive] > div > a 	{ background:var(--bl-destructive-active); }
+			blend-palette[destructive] > div > b 	{ background:var(--bl-destructive-translucent); }
+			blend-palette[destructive] > div > i 	{ background:var(--bl-destructive-light); }
+			blend-palette[destructive] > strong 	{ background:var(--bl-destructive-light); }
+	</style>
 </body>
 </html>
