@@ -142,6 +142,55 @@ You will need to make sure to change the `label` text when the `change` event of
 ```
 ![](docs/file/file.png)
 
+
+### Avatar
+
+Reprecents a user picture
+
+```html
+<bl-avatar>
+	<img src="https://thispersondoesnotexist.com/" />
+</bl-avatar>
+```
+![](docs/avatar/avatar.png)
+
+
+#### Avatar modifiers
+| **Property**				| Effect														|																|
+| -										| -																	| -															|
+| **small**						| Resizes avatar to 24px						| ![](docs/avatar/small.png)		|
+| **online**					| Displays online indicator					| ![](docs/avatar/online.png)		|
+| **online="false"**	| Displays offline indicator				| ![](docs/avatar/offline.png)	|
+| **offline**					| Displays offline indicator				| ![](docs/avatar/offline.png)	|
+| **badge="x"**				| Displays a badge with a "x" value	| ![](docs/avatar/badge.png)		|
+
+### List and Items
+
+```html
+<bl-list>
+	<bl-item off><i class="fi fi-rr-user"></i>Option 01<span>Main</span></bl-item>
+	<bl-item on>
+		<bl-avatar small>
+			<img src="https://thispersondoesnotexist.com/" />
+		</bl-avatar>
+		Option 02
+	</bl-item>
+	<bl-input reverse>
+		<input type="checkbox" />
+		<label>Mantener sesion activa</label>
+	</bl-input>
+	<bl-item off>Option 03</bl-item>
+	<bl-item on selected>Option 04</bl-item>
+	<bl-item off selected>Option 05</bl-item>
+	<bl-item selected>Option 06</bl-item>
+	<bl-item>Option 07</bl-item>
+	<bl-item>Option 08</bl-item>
+	<bl-item>Option 09</bl-item>
+	<bl-item>Option 10</bl-item>
+</bl-list>
+```
+
+
 ### Blended components
 
 You can combine multiple components into one by simply nesting them, in the case of inputs you can nest them like this:

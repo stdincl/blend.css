@@ -778,8 +778,13 @@ bl-input {
 			position:relative;
 			line-height:0;
 		}
-			bl-avatar > i {
+		bl-avatar[small] {
+			width:24px;
+			height:24px;
+		}
+			bl-avatar[badge]::after {
 				line-height:1;
+				content:attr(badge);
 				background:var(--bl-error);
 				color:var(--bl-error-text-strong);
 				padding:2px 5px;
@@ -795,10 +800,6 @@ bl-input {
 				object-fit:cover;
 				aspect-ratio:1;
 				border-radius:100px;
-			}
-			bl-avatar[small] {
-				width:24px;
-				height:24px;
 			}
 
 			bl-avatar[online]::after,
