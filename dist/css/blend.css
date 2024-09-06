@@ -555,12 +555,10 @@ bl-input {
 			align-self:flex-end;
 		}
 		bl-input > bl-input:first-child {
-			border-top-left-radius:inherit;
-			border-bottom-left-radius:inherit;
+			border-radius:var(--bl-input-round) 0 0 var(--bl-input-round);
 		}
 		bl-input > bl-input:last-child {
-			border-top-right-radius:inherit;
-			border-bottom-right-radius:inherit;
+			border-radius:0 var(--bl-input-round) var(--bl-input-round) 0;
 		}
 		bl-input:has(>bl-input) {
 			height:unset !important;
@@ -587,6 +585,12 @@ bl-input {
 			border-top-color:inherit !important;
 			border-top-width:1px !important;
 			border-left-color:transparent !important;
+		}
+		bl-input[column] > bl-input:first-child {;
+			border-radius:var(--bl-input-round) var(--bl-input-round) 0 0;
+		}
+		bl-input[column] > bl-input:last-child {
+			border-radius:0 0 var(--bl-input-round) var(--bl-input-round);
 		}
 
 	/* [inset] modificators */ 
