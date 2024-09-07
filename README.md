@@ -114,8 +114,7 @@ You can select the modifier you want by simply assigning the corresponding prope
 | auxiliary		| **reverse**	| Reverses de input composition | `any`								| ![](docs/input/reverse.png) |
 | auxiliary		| **required-label**	| If `bl-input` contains an [required] element <u>and</u> has the **required-label** defined, displays the **required-label** at the bottom right corner | `any`								| ![](docs/input/required-label.png) |
 
-
-### File and Select element
+### File and Select
 
 The `[type=file]` and `select` elements have a special treatment to mask and generalize their operation in different browsers. You should only always consider adding a `label` element as the next sibling, this `label` element will behave graphically as the `[type=file]` or `select` field as appropriate.
 
@@ -141,6 +140,123 @@ You will need to make sure to change the `label` text when the `change` event of
 </bl-input>
 ```
 ![](docs/file/file.png)
+
+
+### Checkbox and Radio
+
+The `[type=checkbox]` and `[type=radio]` elements have a special treatment to work whits is labels. If you add a `label` element as the next sibling, this `label` element will behave graphically as a row item for the the `[type=checkbox]` or `[type=radio` field as appropriate.
+
+```html
+<bl-input>
+	<input type="checkbox" />
+	<label>This is a checkbox</label> <!-- this label displays as a row item -->
+</bl-input>
+```
+```html
+<bl-input>
+	<input type="radio" />
+	<label>This is a radio</label> <!-- this label displays as a row item -->
+</bl-input>
+```
+
+
+### Blending input
+
+You can combine multiple components into one by simply nesting them, in the case of inputs you can nest them like this:
+
+```html
+<bl-input>
+	<label>Search on internet</label>
+	<a>required</a>
+	<bl-input>
+		<i class="fi fi-rr-search"></i>
+		<input type="text" placeholder="What do you want to search for?" />
+	</bl-input>
+	<bl-input>
+		<input type="checkbox" placeholder="username" />
+		<label>I feel lucky</label>
+	</bl-input>
+</bl-input>
+```
+![](docs/input/blended.png) 
+
+All the properties of the root input will be applied on its nested inputs and you will be able to apply the layout type modifiers on it.
+
+In the previous example the checkbox should not be the same size as the search field, to solve that you can apply the static property on the input corresponding to the checkbox as follows:
+
+```html
+<bl-input>
+	<label>Search on internet</label>
+	<a>required</a>
+	<bl-input>
+		<i class="fi fi-rr-search"></i>
+		<input type="text" placeholder="What do you want to search for?" />
+	</bl-input>
+	<bl-input static> <!-- static property -->
+		<input type="checkbox" placeholder="username" />
+		<label>I feel lucky</label>
+	</bl-input>
+</bl-input>
+```
+
+![](docs/input/static.png)
+
+
+If you need a more continuous interface you can remove internal elements with the inline property as follows:
+
+```html
+<bl-input inline> <!-- inline property -->
+	<label>Search on internet</label>
+	<a>required</a>
+	<bl-input>
+		<i class="fi fi-rr-search"></i>
+		<input type="text" placeholder="What do you want to search for?" />
+	</bl-input>
+	<bl-input static>
+		<input type="checkbox" placeholder="username" />
+		<label>I feel lucky</label>
+	</bl-input>
+</bl-input>
+```
+![](docs/input/inline.png)
+
+By default nested elements are aligned horizontally. You can change to column alignment with the column property follows:
+
+```html
+<bl-input column> <!-- column property -->
+	<label>Search on internet</label>
+	<a>required</a>
+	<bl-input>
+		<i class="fi fi-rr-search"></i>
+		<input type="text" placeholder="What do you want to search for?" />
+	</bl-input>
+	<bl-input>
+		<input type="checkbox" placeholder="username" />
+		<label>I feel lucky</label>
+	</bl-input>
+</bl-input>
+```
+![](docs/input/column.png)
+
+In a more real-world example, a login form could be coded like this:
+```html
+<bl-input column>
+	<label>Sign In</label>
+	<a href>Sign Up</a>
+	<bl-input inset>
+		<label>Username</label>
+		<i class="fi fi-rr-user"></i>
+		<input type="text" placeholder="jhon" />
+	</bl-input>
+	<bl-input inset>
+		<label>Password</label>
+		<i class="fi fi-rr-lock"></i>
+		<input type="text" placeholder="····" />
+	</bl-input>
+</bl-input>
+```
+
+![](docs/input/signin.png)
 
 
 ### Avatar
@@ -275,101 +391,4 @@ You can add non-scrollable items to the `bl-dropdown` by simply not adding them 
 
 ![](docs/dropdown/static.png)
 
-### Blending input
-
-You can combine multiple components into one by simply nesting them, in the case of inputs you can nest them like this:
-
-```html
-<bl-input>
-	<label>Search on internet</label>
-	<a>required</a>
-	<bl-input>
-		<i class="fi fi-rr-search"></i>
-		<input type="text" placeholder="What do you want to search for?" />
-	</bl-input>
-	<bl-input>
-		<input type="checkbox" placeholder="username" />
-		<label>I feel lucky</label>
-	</bl-input>
-</bl-input>
-```
-![](docs/input/blended.png) 
-
-All the properties of the root input will be applied on its nested inputs and you will be able to apply the layout type modifiers on it.
-
-In the previous example the checkbox should not be the same size as the search field, to solve that you can apply the static property on the input corresponding to the checkbox as follows:
-
-```html
-<bl-input>
-	<label>Search on internet</label>
-	<a>required</a>
-	<bl-input>
-		<i class="fi fi-rr-search"></i>
-		<input type="text" placeholder="What do you want to search for?" />
-	</bl-input>
-	<bl-input static> <!-- static property -->
-		<input type="checkbox" placeholder="username" />
-		<label>I feel lucky</label>
-	</bl-input>
-</bl-input>
-```
-
-![](docs/input/static.png)
-
-
-If you need a more continuous interface you can remove internal elements with the inline property as follows:
-
-```html
-<bl-input inline> <!-- inline property -->
-	<label>Search on internet</label>
-	<a>required</a>
-	<bl-input>
-		<i class="fi fi-rr-search"></i>
-		<input type="text" placeholder="What do you want to search for?" />
-	</bl-input>
-	<bl-input static>
-		<input type="checkbox" placeholder="username" />
-		<label>I feel lucky</label>
-	</bl-input>
-</bl-input>
-```
-![](docs/input/inline.png)
-
-By default nested elements are aligned horizontally. You can change to column alignment with the column property follows:
-
-```html
-<bl-input column> <!-- column property -->
-	<label>Search on internet</label>
-	<a>required</a>
-	<bl-input>
-		<i class="fi fi-rr-search"></i>
-		<input type="text" placeholder="What do you want to search for?" />
-	</bl-input>
-	<bl-input>
-		<input type="checkbox" placeholder="username" />
-		<label>I feel lucky</label>
-	</bl-input>
-</bl-input>
-```
-![](docs/input/column.png)
-
-In a more real-world example, a login form could be coded like this:
-```html
-<bl-input column>
-	<label>Sign In</label>
-	<a href>Sign Up</a>
-	<bl-input inset>
-		<label>Username</label>
-		<i class="fi fi-rr-user"></i>
-		<input type="text" placeholder="jhon" />
-	</bl-input>
-	<bl-input inset>
-		<label>Password</label>
-		<i class="fi fi-rr-lock"></i>
-		<input type="text" placeholder="····" />
-	</bl-input>
-</bl-input>
-```
-
-![](docs/input/signin.png)
 
