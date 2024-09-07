@@ -250,11 +250,32 @@ It works in conjunction with `bl-input` by adding it as a child node. When the u
 | -								| -								| -															|
 | **open**				| Forces display	| ![](docs/dropdown/open.png)		|
 
+
+### Blending dropdown
+
 You can add non-scrollable items to the `bl-dropdown` by simply not adding them to a `bl-list` component
+
+```html
+<bl-input>
+	<input type="text" placeholder="Search user" />
+	<bl-dropdown>
+		<bl-input reverse>
+			<input type="checkbox"/>
+			<label>Only active users</label>
+		</bl-input>
+		<bl-list divided>
+			<bl-item>User A</bl-item>
+			<bl-item selected>User B</bl-item>
+			<bl-item>User C</bl-item>
+			<bl-item>User D</bl-item>
+		</bl-list>
+	</bl-dropdown>
+</bl-input>
+```
 
 ![](docs/dropdown/static.png)
 
-### Blending inputs
+### Blending input
 
 You can combine multiple components into one by simply nesting them, in the case of inputs you can nest them like this:
 
