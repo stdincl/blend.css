@@ -23,10 +23,10 @@ Although many core components use the `bl-` prefix, some internal elements use s
   - Radio
   - File
   - Select
-- Dropdown
-- List
-  - Item
 - Avatar
+- List
+- Item
+- Dropdown
 
 
 ## Inputs
@@ -74,7 +74,7 @@ Some of them need to be in a specific position to work correctly.
 There are four types of modifiers for inputs, **composition**, **status**, **layout** and **auxiliary** modifiers.
 - **composition** modifiers change the composition of the input.
 - **status** modifiers modify the color.
-- **layout** modifiers change de layout of [Blended components](#blended).
+- **layout** modifiers change de layout of [Blended inputs](#blended-inputs).
 - **auxiliary** modifiers change some extra characteristics.
 
 It is possible to mix **composition**, **status**, **layout** and **auxiliary** modifiers with each other.
@@ -104,9 +104,9 @@ You can select the modifier you want by simply assigning the corresponding prope
 
 | **Type**		| **Property**	| Effect						| Availability 						| Target		| 									|
 | -				| -				| -								| -									| -				| - 								|
-| layout		| **static**	| disable expansion				| [Blended components](#blended)	| nested input	| ![](docs/input/static.png) 		|
-| layout		| **inline**	| removes division lines		| [Blended components](#blended)	| root input	| ![](docs/input/inline.png) 		|
-| layout		| **column**	| transforms layout to columns	| [Blended components](#blended)	| root input	| ![](docs/input/column.png) 		|
+| layout		| **static**	| disable expansion				| [Blended inputs](#blended-inputs)	| nested input	| ![](docs/input/static.png) 		|
+| layout		| **inline**	| removes division lines		| [Blended inputs](#blended-inputs)	| root input	| ![](docs/input/inline.png) 		|
+| layout		| **column**	| transforms layout to columns	| [Blended inputs](#blended-inputs)	| root input	| ![](docs/input/column.png) 		|
 
 | **Type**		| **Property**	| Effect						| Availability 						| 									|
 | -				| -				| -								| -									| - 								|
@@ -164,34 +164,97 @@ Reprecents a user picture
 | **offline**					| Displays offline indicator				| ![](docs/avatar/offline.png)	|
 | **badge="x"**				| Displays a badge with a "x" value	| ![](docs/avatar/badge.png)		|
 
-### List and Items
+### List
+
+The `bl-list` component is just a scrollable list item container. It can contains `bl-item`, or `bl-input` components
 
 ```html
 <bl-list>
-	<bl-item off><i class="fi fi-rr-user"></i>Option 01<span>Main</span></bl-item>
-	<bl-item on>
-		<bl-avatar small>
-			<img src="https://thispersondoesnotexist.com/" />
-		</bl-avatar>
-		Option 02
-	</bl-item>
-	<bl-input reverse>
-		<input type="checkbox" />
-		<label>Mantener sesion activa</label>
-	</bl-input>
-	<bl-item off>Option 03</bl-item>
-	<bl-item on selected>Option 04</bl-item>
-	<bl-item off selected>Option 05</bl-item>
-	<bl-item selected>Option 06</bl-item>
-	<bl-item>Option 07</bl-item>
-	<bl-item>Option 08</bl-item>
-	<bl-item>Option 09</bl-item>
-	<bl-item>Option 10</bl-item>
+	<bl-item>Item A</bl-item>
+	<bl-item>Item B</bl-item>
 </bl-list>
 ```
 
+#### List modifiers
+| **Property**				| Effect												|																|
+| -										| -															| -															|
+| **free**						| Disables scroll height limit	| ![](docs/list/list.png)				|
+| **divided**					| Adds a divider between items	| ![](docs/list/divided.png)		|
 
-### Blended components
+
+### Item
+
+The `bl-item` component represents a row in a list. For advanced item layouts you can use [Blended items](#blended-items)
+
+```html
+<bl-item>Item A</bl-item>
+```
+
+![](docs/item/item.png)
+
+#### Item modifiers
+
+| **Property**		| Effect									|																|
+| -								| -												| -															|
+| **on**					| Adds a on marker				| ![](docs/item/on.png)					|
+| **off**					| Adds a off marker				| ![](docs/item/off.png)				|
+| **selected**		| Adds a selected marker	| ![](docs/item/selected.png)		|
+
+
+### Blending items
+
+You can combine multiple components into one item by simply nesting them, in the case of items you can nest them like this:
+
+```html
+<bl-item>
+	<bl-avatar small>
+		<img src="https://thispersondoesnotexist.com/" />
+	</bl-avatar>
+	<bl-input clean>
+		<input type="checkbox" />
+		<label>Choose user</label> <!-- this label is required [type=file] -->
+	</bl-input>
+</bl-item>
+```
+
+![](docs/item/blend.png)
+
+
+### Dropdown
+
+The `bl-dropdown` component is just a container that is displayed against :hover or :focus events, or by setting the open property.
+
+It is intended to display lists for search results or filters.
+
+It works in conjunction with `bl-input` by adding it as a child node. When the user focuses on the previous sibling input, the `bl-dropdown` component is automatically displayed.
+
+```html
+<bl-input>
+	<input type="text" placeholder="Search user" />
+	<bl-dropdown> <!-- dropdown must be next to the input --> 
+		<bl-list divided>
+			<bl-item>User A</bl-item>
+			<bl-item selected>User B</bl-item>
+			<bl-item>User C</bl-item>
+			<bl-item>User D</bl-item>
+		</bl-list>
+	</bl-dropdown>
+</bl-input>
+```
+
+![](docs/dropdown/dropdown.png)
+
+#### Dropdown modifiers
+
+| **Property**		| Effect					|																|
+| -								| -								| -															|
+| **open**				| Forces display	| ![](docs/dropdown/open.png)		|
+
+You can add non-scrollable items to the `bl-dropdown` by simply not adding them to a `bl-list` component
+
+![](docs/dropdown/static.png)
+
+### Blending inputs
 
 You can combine multiple components into one by simply nesting them, in the case of inputs you can nest them like this:
 

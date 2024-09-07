@@ -697,6 +697,11 @@ bl-input {
 			display:block;
 			overflow:auto;
 			max-height:300px;
+			padding:0 10px;
+			margin:0 -10px;
+		}
+		bl-list[free] {
+			max-height:unset;
 		}
 		bl-list::after,
 		bl-list::before {
@@ -729,6 +734,10 @@ bl-input {
 			background:var(--bl-primary);
 			color:var(--bl-primary-text);
 		}
+		bl-item:has(>bl-input):hover {
+			background:var(--bl-solid);
+			color:var(--bl-solid-text);
+		}
 		bl-item[on]::before,
 		bl-item[off]::before {
 			display:block;
@@ -742,6 +751,9 @@ bl-input {
 		}
 		bl-item[off]:hover::before {
 			background:var(--bl-primary-text-strong);
+		}
+		bl-item[off]:has(>bl-input):hover::before {
+			background:var(--bl-solid-text-strong);
 		}
 		bl-item[on]::before {
 			background:var(--bl-success);

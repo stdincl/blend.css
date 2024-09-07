@@ -22,9 +22,21 @@
 		<br />
 		<br />
 
-		<bl-avatar badge="10">
-			<img src="https://thispersondoesnotexist.com/" />
-		</bl-avatar>
+		<bl-input>
+			<input type="text" placeholder="Search user" />
+			<bl-dropdown>
+				<bl-input reverse>
+					<input type="checkbox"/>
+					<label>Only active users</label>
+				</bl-input>
+				<bl-list divided>
+					<bl-item>User A</bl-item>
+					<bl-item selected>User B</bl-item>
+					<bl-item>User C</bl-item>
+					<bl-item>User D</bl-item>
+				</bl-list>
+			</bl-dropdown>
+		</bl-input>
 
 		<br />
 		<br />
