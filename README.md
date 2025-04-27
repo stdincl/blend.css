@@ -4,7 +4,7 @@ Blend.css is a minimal, component based UI library.
 
 It allows you to write and maintain user interfaces with clean, parameterizable code, using adaptable, nestable and ready-to-use components that are configurable in their parameters.
 
-It is not intended to be modified by means of classes, but by well-defined descriptive properties, with the aim of writing code that is readable by developers without prior knowledge.
+It is not intended to be modified using classes, but by well-defined descriptive properties, with the aim of writing code that is readable by developers without prior knowledge.
 
 ## Components
 
@@ -12,7 +12,7 @@ Blend.css works around a few key components that can be nested and parameterized
 
 All components are configurable using HTML tags that begin with the `bl-` prefix and can be configured using their properties.
 
-Although many core components use the `bl-` prefix, some internal elements use standard HTML in order to minimize the weight of the library. In the case of `bl-input`, its internal elements are used to create parts that most inputs use, such as **labels**, **icons**, **links**, and others.
+Although many core components use the `bl-` prefix, many internal elements use standard HTML in order to minimize the weight of the library. In the case of `bl-input`, its internal elements are used to create parts that most inputs use, such as **labels**, **icons**, **links**, and others.
 
 - [Inputs](#inputs)
   - Text (and Date, Number,...)
@@ -109,7 +109,7 @@ You can select the modifier you want by simply assigning the corresponding prope
 
 ### File and Select
 
-The `[type=file]` and `select` elements have a special treatment to mask and generalize their operation in different browsers. You should only always consider adding a `label` element as the next sibling, this `label` element will behave graphically as the `[type=file]` or `select` field as appropriate.
+The `[type=file]` and `select` elements have a special treatment to mask and generalize their operation in different browsers. You have to add a `label` element as the next sibling, this `label` element will behave graphically as the `[type=file]` or `select` field as appropriate.
 
 You will need to make sure to change the `label` text when the `change` event of the `[type=file]` or `select` field is triggered, or you can optionally choose to import and implement the pollyfills from `blend.js`
 
@@ -256,7 +256,7 @@ In a more real-world example, a login form could be coded like this:
 
 ### Avatar
 
-Reprecents a user picture
+Represents a user picture
 
 ```html
 <bl-avatar>
@@ -268,13 +268,13 @@ Reprecents a user picture
 
 #### Avatar modifiers
 
-| **Property**				| Effect														|																|
-| -										| -																	| -															|
-| **small**						| Resizes avatar to 24px						| ![](docs/avatar/small.png)		|
-| **online**					| Displays online indicator					| ![](docs/avatar/online.png)		|
-| **online="false"**	| Displays offline indicator				| ![](docs/avatar/offline.png)	|
-| **offline**					| Displays offline indicator				| ![](docs/avatar/offline.png)	|
-| **badge="x"**				| Displays a badge with a "x" value	| ![](docs/avatar/badge.png)		|
+| **Property**       | Effect                            |                            |
+| ------------------------ | --------------------------------- | -------------------------- |
+| **small**          | Resizes avatar to 24px            | ![](docs/avatar/small.png)   |
+| **online**         | Displays online indicator         | ![](docs/avatar/online.png)  |
+| **online="false"** | Displays offline indicator        | ![](docs/avatar/offline.png) |
+| **offline**        | Displays offline indicator        | ![](docs/avatar/offline.png) |
+| **badge="x"**      | Displays a badge with a "x" value | ![](docs/avatar/badge.png)   |
 
 ### List
 
@@ -289,10 +289,10 @@ The `bl-list` component is just a scrollable list item container. It can contain
 
 #### List modifiers
 
-| **Property**				| Effect												|																|
-| -										| -															| -															|
-| **free**						| Disables scroll height limit	| ![](docs/list/list.png)				|
-| **divided**					| Adds a divider between items	| ![](docs/list/divided.png)		|
+| **Property** | Effect                       |                          |
+| ------------------ | ---------------------------- | ------------------------ |
+| **free**     | Disables scroll height limit | ![](docs/list/list.png)    |
+| **divided**  | Adds a divider between items | ![](docs/list/divided.png) |
 
 ### Item
 
@@ -306,11 +306,11 @@ The `bl-item` component represents a row in a list. For advanced item layouts yo
 
 #### Item modifiers
 
-| **Property**		| Effect									|																|
-| -								| -												| -															|
-| **on**					| Adds a on marker				| ![](docs/item/on.png)					|
-| **off**					| Adds a off marker				| ![](docs/item/off.png)				|
-| **selected**		| Adds a selected marker	| ![](docs/item/selected.png)		|
+| **Property** | Effect                 |                           |
+| ------------------ | ---------------------- | ------------------------- |
+| **on**       | Adds a on marker       | ![](docs/item/on.png)       |
+| **off**      | Adds a off marker      | ![](docs/item/off.png)      |
+| **selected** | Adds a selected marker | ![](docs/item/selected.png) |
 
 ### Blending items
 
@@ -356,9 +356,9 @@ It works in conjunction with `bl-input` by adding it as a child node. When the u
 
 #### Dropdown modifiers
 
-| **Property**		| Effect					|																|
-| -								| -								| -															|
-| **open**				| Forces display	| ![](docs/dropdown/open.png)		|
+| **Property** | Effect         |                           |
+| ------------------ | -------------- | ------------------------- |
+| **open**     | Forces display | ![](docs/dropdown/open.png) |
 
 ### Blending dropdown
 
