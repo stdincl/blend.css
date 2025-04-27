@@ -1,0 +1,9 @@
+{
+  "name": "blend.css",
+  "version": "1.0.0",
+  "main": "dist/blend.js",
+  "repository": "https://github.com/stdincl/blend.css/",
+  "author": "STDin <diego.rodriguez.gomez@stdin.cl>",
+  "license": "MIT",
+  "dependencies": {}
+}

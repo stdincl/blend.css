@@ -756,7 +756,6 @@ bl-input {
 			border-color:transparent;
 			box-shadow:none;
 		}
-		bl-list[divided] {}
 			bl-list[divided] > * {
 				border-bottom:1px solid var(--bl-solid-border-color);
 			}
