@@ -71,15 +71,13 @@ Some of them need to be in a specific position to work correctly.
 
 ### Input modifiers
 
-There are four types of modifiers for inputs, **composition**, **status**, **layout** and **auxiliary** modifiers.
+There are four types of modifiers for inputs:
 
-- **composition** modifiers change the composition of the input.
-- **status** modifiers modify the color.
-- **layout** modifiers change de layout of [Blended inputs](#blended-inputs).
-- **auxiliary** modifiers change some extra characteristics.
+- **composition**: change the composition of the input.
+- **status:** modify the color.
+- **layout**: change de layout of [Blended inputs](#blended-inputs).
+- **auxiliary**: change some extra characteristics.
 
-It is possible to mix **composition**, **status**, **layout** and **auxiliary** modifiers with each other.
-Only **auxiliary** and **layout** modifiers can be combined with each other.
 You can select the modifier you want by simply assigning the corresponding property to the input, for example **[inset]**:
 
 ```html
