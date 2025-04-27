@@ -93,28 +93,20 @@ You can select the modifier you want by simply assigning the corresponding prope
 </bl-input>
 ```
 
-| **Type**		| **Property**	| Effect						|									|
-| -				| -				| -								| -									|
-| composition	| **inset**		| Causes label incorporation	  ![img](docs/input/inset.png)	|
-| composition	| **overlap**	| Causes label overlap			| ![img](docs/input/overlap.png)	|
 
-| **Type**		| **Property**	| Effect						| 									|
-| -				| -				| -								| -									|
-| status		| **error**		| Error coloring				| ![](docs/input/error.png) 		|
-| status		| **success**	| Success coloring				| ![](docs/input/success.png) 		|
-| status		| **disabled**	| Disabled coloring				| ![](docs/input/disabled.png) 		|
-
-| **Type**		| **Property**	| Effect						| Availability 						| Target		| 									|
-| -				| -				| -								| -									| -				| - 								|
-| layout		| **static**	| disable expansion				| [Blended inputs](#blended-inputs)	| nested input	| ![](docs/input/static.png) 		|
-| layout		| **inline**	| removes division lines		| [Blended inputs](#blended-inputs)	| root input	| ![](docs/input/inline.png) 		|
-| layout		| **column**	| transforms layout to columns	| [Blended inputs](#blended-inputs)	| root input	| ![](docs/input/column.png) 		|
-
-| **Type**		| **Property**	| Effect						| Availability 						| 									|
-| -				| -				| -								| -									| - 								|
-| auxiliary		| **clean**		| Removes outline and paddings	| `checkbox` `radio`				| ![](docs/input/clean.png) |
-| auxiliary		| **reverse**	| Reverses de input composition | `any`								| ![](docs/input/reverse.png) |
-| auxiliary		| **required-label**	| If `bl-input` contains an [required] element `<u>`and`</u>` has the **required-label** defined, displays the **required-label** at the bottom right corner | `any`								| ![](docs/input/required-label.png) |
+| Type        | Property                 | Effect                                                                                                                                             | Availability                    | Target              |                                                                                                           |
+| ----------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------- |
+| composition | **inset**          | Label incorporation                                                                                                                                | -                               | -                   | ![img](https://file+.vscode-resource.vscode-cdn.net/Users/diego/Proyectos/blend.css/docs/input/inset.png)   |
+| composition | **overlap**        | Labeloverlap                                                                                                                                       | -                               | -                   | ![img](https://file+.vscode-resource.vscode-cdn.net/Users/diego/Proyectos/blend.css/docs/input/overlap.png) |
+| status      | **error**          | Error coloring                                                                                                                                     | -                               | -                   | ![img](docs/input/error.png)                                                                                |
+| status      | **success**        | Success coloring                                                                                                                                   | -                               | -                   | ![img](docs/input/success.png)                                                                              |
+| status      | **disabled**       | Disabled coloring                                                                                                                                  | -                               | -                   |                                                                                                           |
+| layout      | **static**         | Disables expansion                                                                                                                                 | Blend inputs                    | nested<br />element | ![img](docs/input/static.png)                                                                               |
+| layout      | **inline**         | Removes division lines                                                                                                                             | Blend inputs                    | root<br />element   | ![img](docs/input/inline.png)                                                                               |
+| layout      | **column**         | Transforms layout to columns                                                                                                                       | Blend inputs                    | root<br />element   | ![img](docs/input/column.png)                                                                               |
+| auxiliary   | **clean**          | Removes outline and paddings                                                                                                                       | check inputs<br />radio oinputs |                     | ![img](docs/input/clean.png)                                                                                |
+| auxiliary   | **reverse**        | Reverses input composition                                                                                                                         | any                             |                     | ![img](docs/input/reverse.png)                                                                              |
+| auxiliary   | **required-label** | If bl-input contains an required<br />element and has the required-label<br />defined, displays the required-label<br />at the bottom right corner | any                             |                     | ![img](docs/input/required-label.png)                                                                       |
 
 ### File and Select
 
