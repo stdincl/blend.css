@@ -295,7 +295,7 @@ bl-input {
 		bl-input[error] i,
 		bl-input[error]:has(*:focus) > i,
 		bl-input[error] label:first-child {
-			color:var(--bl-error);
+			color:var(--bl-error) !important;
 		}
 
 	/* success */
@@ -314,7 +314,7 @@ bl-input {
 		}
 
 	/* required */
-	bl-input:has(>[required])::before {
+	bl-input:has(>*[required])::before {
 		display:block;
 		content:attr(required-label);
 		position:absolute;
@@ -523,6 +523,7 @@ bl-input {
 			-webkit-appearance:none;
 			flex:unset;
 			margin:0;
+			z-index:100;
 		}
 		bl-input > [type=checkbox] {
 			border-radius:4px;
@@ -602,7 +603,7 @@ bl-input {
 			border-top-width:1px !important;
 			border-left-color:transparent !important;
 		}
-		bl-input[column] > bl-input:first-child {;
+		bl-input[column] > bl-input:first-child {
 			border-radius:var(--bl-input-round) var(--bl-input-round) 0 0;
 		}
 		bl-input[column] > bl-input:last-child {
@@ -668,6 +669,8 @@ bl-input {
 			position:absolute;
 			left:0;
 			min-width:100%;
+			max-height:340px;
+			overflow:auto;
 			top:100%;
 			margin-left:-1px;
 			margin-right:-1px;

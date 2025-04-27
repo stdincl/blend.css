@@ -6,7 +6,6 @@ It allows you to write and maintain user interfaces with clean, parameterizable 
 
 It is not intended to be modified by means of classes, but by well-defined descriptive properties, with the aim of writing code that is readable by developers without prior knowledge.
 
-
 ## Components
 
 Blend.css works around a few key components that can be nested and parameterized separately or together.
@@ -28,10 +27,9 @@ Although many core components use the `bl-` prefix, some internal elements use s
 - Item
 - Dropdown
 
-
 ## Inputs
 
-The `<bl-input>` component is the core of inputs, buttons and form selectors. With it you can create text fields, textarea, button, checkbox, radio, file and select inputs. 
+The `<bl-input>` component is the core of inputs, buttons and form selectors. With it you can create text fields, textarea, button, checkbox, radio, file and select inputs.
 
 ### Minimal use
 
@@ -40,6 +38,7 @@ The `<bl-input>` component is the core of inputs, buttons and form selectors. Wi
 	<input type="text" placeholder="This is an input" />
 </bl-input>
 ```
+
 ![](docs/input/text.png)
 
 ### Extended use
@@ -49,14 +48,13 @@ Some of them need to be in a specific position to work correctly.
 
 **The internal components currently available are:**
 
-| **TAG** | Common use | Restriction |
-| ----- | ----- | ----- |
-| **label** | To display the input name, it is usually located in the top left section of the input. | It must be the first tag of the input    |
-| **i** | Represents the input icon, I recommend the [UI Icons library](https://www.flaticon.com/uicons/interface-icons), but you can use the one you prefer. | - |
-| **a** | To display an comment or actions related to the input, it is usually located in the top right section of the input. | - |
-| **pre** | To display a prefix or suffix for an input. | - |
-| **kbd** | To display a key shortcut or annotation for an input, it is usually represented as a box similar to a keyboard button. | - |
-
+| **TAG**   | Common use                                                                                                                                      | Restriction                               |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| **label** | To display the input name, it is usually located in the top left section of the input.                                                          | It must be the first element of the input |
+| **i**     | Represents the input icon, I recommend the[UI Icons library](https://www.flaticon.com/uicons/interface-icons), but you can use the one you prefer. | -                                         |
+| **a**     | To display a comment or actions related to the input, it is usually located in the top right section of the input.                              | -                                         |
+| **pre**   | To display a prefix or suffix for an input.                                                                                                     | -                                         |
+| **kbd**   | To display a key shortcut or annotation for an input, it is usually represented as a box similar to a keyboard button.                          | -                                         |
 
 ```html
 <bl-input>
@@ -68,10 +66,13 @@ Some of them need to be in a specific position to work correctly.
 	<kbd>⌘R</kbd>
 </bl-input>
 ```
+
 ![](docs/input/text-extended.png)
 
 ### Input modifiers
+
 There are four types of modifiers for inputs, **composition**, **status**, **layout** and **auxiliary** modifiers.
+
 - **composition** modifiers change the composition of the input.
 - **status** modifiers modify the color.
 - **layout** modifiers change de layout of [Blended inputs](#blended-inputs).
@@ -80,6 +81,7 @@ There are four types of modifiers for inputs, **composition**, **status**, **lay
 It is possible to mix **composition**, **status**, **layout** and **auxiliary** modifiers with each other.
 Only **auxiliary** and **layout** modifiers can be combined with each other.
 You can select the modifier you want by simply assigning the corresponding property to the input, for example **[inset]**:
+
 ```html
 <bl-input inset> <!-- inset property here -->
 	<label>User name</label>
@@ -93,8 +95,8 @@ You can select the modifier you want by simply assigning the corresponding prope
 
 | **Type**		| **Property**	| Effect						|									|
 | -				| -				| -								| -									|
-| composition	| **inset**		| Causes label incorporation	| ![](docs/input/inset.png)	|
-| composition	| **overlap**	| Causes label overlap			| ![](docs/input/overlap.png)	|
+| composition	| **inset**		| Causes label incorporation	  ![img](docs/input/inset.png)	|
+| composition	| **overlap**	| Causes label overlap			| ![img](docs/input/overlap.png)	|
 
 | **Type**		| **Property**	| Effect						| 									|
 | -				| -				| -								| -									|
@@ -112,7 +114,7 @@ You can select the modifier you want by simply assigning the corresponding prope
 | -				| -				| -								| -									| - 								|
 | auxiliary		| **clean**		| Removes outline and paddings	| `checkbox` `radio`				| ![](docs/input/clean.png) |
 | auxiliary		| **reverse**	| Reverses de input composition | `any`								| ![](docs/input/reverse.png) |
-| auxiliary		| **required-label**	| If `bl-input` contains an [required] element <u>and</u> has the **required-label** defined, displays the **required-label** at the bottom right corner | `any`								| ![](docs/input/required-label.png) |
+| auxiliary		| **required-label**	| If `bl-input` contains an [required] element `<u>`and`</u>` has the **required-label** defined, displays the **required-label** at the bottom right corner | `any`								| ![](docs/input/required-label.png) |
 
 ### File and Select
 
@@ -130,8 +132,8 @@ You will need to make sure to change the `label` text when the `change` event of
 	<label>Option A</label> <!-- this label is required for select -->
 </bl-input>
 ```
-![](docs/select/select.png)
 
+![](docs/select/select.png)
 
 ```html
 <bl-input>
@@ -139,8 +141,8 @@ You will need to make sure to change the `label` text when the `change` event of
 	<label>Choose your file</label> <!-- this label is required [type=file] -->
 </bl-input>
 ```
-![](docs/file/file.png)
 
+![](docs/file/file.png)
 
 ### Checkbox and Radio
 
@@ -152,13 +154,13 @@ The `[type=checkbox]` and `[type=radio]` elements have a special treatment to wo
 	<label>This is a checkbox</label> <!-- this label displays as a row item -->
 </bl-input>
 ```
+
 ```html
 <bl-input>
 	<input type="radio" />
 	<label>This is a radio</label> <!-- this label displays as a row item -->
 </bl-input>
 ```
-
 
 ### Blending input
 
@@ -178,7 +180,8 @@ You can combine multiple components into one by simply nesting them, in the case
 	</bl-input>
 </bl-input>
 ```
-![](docs/input/blended.png) 
+
+![](docs/input/blended.png)
 
 All the properties of the root input will be applied on its nested inputs and you will be able to apply the layout type modifiers on it.
 
@@ -201,7 +204,6 @@ In the previous example the checkbox should not be the same size as the search f
 
 ![](docs/input/static.png)
 
-
 If you need a more continuous interface you can remove internal elements with the inline property as follows:
 
 ```html
@@ -218,6 +220,7 @@ If you need a more continuous interface you can remove internal elements with th
 	</bl-input>
 </bl-input>
 ```
+
 ![](docs/input/inline.png)
 
 By default nested elements are aligned horizontally. You can change to column alignment with the column property follows:
@@ -236,9 +239,11 @@ By default nested elements are aligned horizontally. You can change to column al
 	</bl-input>
 </bl-input>
 ```
+
 ![](docs/input/column.png)
 
 In a more real-world example, a login form could be coded like this:
+
 ```html
 <bl-input column>
 	<label>Sign In</label>
@@ -258,7 +263,6 @@ In a more real-world example, a login form could be coded like this:
 
 ![](docs/input/signin.png)
 
-
 ### Avatar
 
 Reprecents a user picture
@@ -268,10 +272,11 @@ Reprecents a user picture
 	<img src="https://thispersondoesnotexist.com/" />
 </bl-avatar>
 ```
+
 ![](docs/avatar/avatar.png)
 
-
 #### Avatar modifiers
+
 | **Property**				| Effect														|																|
 | -										| -																	| -															|
 | **small**						| Resizes avatar to 24px						| ![](docs/avatar/small.png)		|
@@ -292,11 +297,11 @@ The `bl-list` component is just a scrollable list item container. It can contain
 ```
 
 #### List modifiers
+
 | **Property**				| Effect												|																|
 | -										| -															| -															|
 | **free**						| Disables scroll height limit	| ![](docs/list/list.png)				|
 | **divided**					| Adds a divider between items	| ![](docs/list/divided.png)		|
-
 
 ### Item
 
@@ -316,7 +321,6 @@ The `bl-item` component represents a row in a list. For advanced item layouts yo
 | **off**					| Adds a off marker				| ![](docs/item/off.png)				|
 | **selected**		| Adds a selected marker	| ![](docs/item/selected.png)		|
 
-
 ### Blending items
 
 You can combine multiple components into one item by simply nesting them, in the case of items you can nest them like this:
@@ -334,7 +338,6 @@ You can combine multiple components into one item by simply nesting them, in the
 ```
 
 ![](docs/item/blend.png)
-
 
 ### Dropdown
 
@@ -366,7 +369,6 @@ It works in conjunction with `bl-input` by adding it as a child node. When the u
 | -								| -								| -															|
 | **open**				| Forces display	| ![](docs/dropdown/open.png)		|
 
-
 ### Blending dropdown
 
 You can add non-scrollable items to the `bl-dropdown` by simply not adding them to a `bl-list` component
@@ -390,5 +392,3 @@ You can add non-scrollable items to the `bl-dropdown` by simply not adding them 
 ```
 
 ![](docs/dropdown/static.png)
-
-
