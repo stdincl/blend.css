@@ -1,8 +1,16 @@
-@import url('theme.css');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 :root {
 
 	/*
+
+		BlendCSS comes with some core palettes, 
+		solid:For components, is the default color for UI
+		primary:For main actions or elements that requires user atention
+		noun:For hight contrast elements, must be complementary of -solid-
+		error:For error elements, delete buttons,...
+		success:For success elements, create buttons,...
+		disabled:For disabled elements, create buttons,...
+
 		Template for color definition.
 		Every color theme use this definition
 		--bl-{palette}:[color]
@@ -14,13 +22,6 @@
 		--bl-{palette}-text-secundary:[text color for secundary elements, ex:labels, notes, ...]
 		--bl-{palette}-border-color:[dafult border color for element if needed]
 		--bl-{palette}-border-color-strong:[border color for hover or active states of element if needed]
-
-		BlendCSS comes with some core palettes, 
-		solid:For components, is the default color for UI
-		primary:For main actions or elements that requires user atention
-		noun:For hight contrast elements, must be complementary of -solid-
-		error:For error elements, delete buttons,...
-		success:For success elements, create buttons,...
 	*/
 	/* solid:theme */
 	--bl-solid:#ffffff;
@@ -55,6 +56,17 @@
 	--bl-noun-border-color:#e7e8ea;
 	--bl-noun-border-color-strong:#d1d7dd;
 
+	/* error:theme */
+	--bl-error:#f81d5e;
+	--bl-error-light:#ff4a7f;
+	--bl-error-translucent:#f81d5e22;
+	--bl-error-active:#b41645;
+	--bl-error-text:#ffd8e1;
+	--bl-error-text-strong:#ffffff;
+	--bl-error-text-secundary:#ffa8a8;
+	--bl-error-border-color:#c41a22;
+	--bl-error-border-color-strong:#9b1428;
+
 	/* success:theme */
 	--bl-success:#28d659;
 	--bl-success-light:#53de7a;
@@ -66,16 +78,16 @@
 	--bl-success-border-color:#1ac449;
 	--bl-success-border-color-strong:#149b3a;
 
-	/* error:theme */
-	--bl-error:#f81d5e;
-	--bl-error-light:#ff4a7f;
-	--bl-error-translucent:#f81d5e22;
-	--bl-error-active:#b41645;
-	--bl-error-text:#ffd8e1;
-	--bl-error-text-strong:#ffffff;
-	--bl-error-text-secundary:#ffa8a8;
-	--bl-error-border-color:#c41a22;
-	--bl-error-border-color-strong:#9b1428;
+	/* disabled:theme */
+	--bl-disabled:#b1b1b1;
+	--bl-disabled-light:#d7d7d7;
+	--bl-disabled-translucent:#d7d7d722;
+	--bl-disabled-active:#7d7d7d;
+	--bl-disabled-text:#7f7f7f;
+	--bl-disabled-text-strong:#333333;
+	--bl-disabled-text-secundary:#777777;
+	--bl-disabled-border-color:#828282;
+	--bl-disabled-border-color-strong:#8f8f8f;
 
 	/* Default UI settings */
 	--bl-wrap-size:90%;
@@ -168,8 +180,9 @@ bl-wrap {
 		[inset] causes label incorporation
 		[reverse] causes reverse layout
 		[overlap] causes label overlap
-		[error] for error coloring (error)
-		[success] for success coloring (success)
+		[error] for error coloring 
+		[success] for success coloring  
+		[disabled] for disabled coloring 
 		[static] disable expansion
 		[inline] removes division lines
 		[column] transforms layout in columns
@@ -278,39 +291,66 @@ bl-input {
 			height:var(--bl-label-size);
 			color:var(--bl-error);
 		}
-		bl-input[error] > aside {
+		bl-input[error] > aside,
+		bl-input:has(>*[error]) > aside {
 			display:flex;
 		}
-		bl-input[error]:has(>aside) {
+		bl-input[error]:has(>aside),
+		bl-input:has(>*[error]):has(>aside) {
 			margin-bottom:var(--bl-label-size);
 		}
-		bl-input[error] {
+		bl-input[error],
+		bl-input:has(>*[error]) {
 			border-color:var(--bl-error);
 		}
 		bl-input[error]:has(*:focus),
 		bl-input[error] [type=checkbox]:focus,
-		bl-input[error] [type=radio]:focus {
+		bl-input[error] [type=radio]:focus,
+		bl-input:has(>*[error]):has(*:focus),
+		bl-input:has(>*[error]) [type=checkbox]:focus,
+		bl-input:has(>*[error]) [type=radio]:focus {
 			outline-color:var(--bl-error-translucent);
 		}
 		bl-input[error] i,
 		bl-input[error]:has(*:focus) > i,
-		bl-input[error] label:first-child {
+		bl-input[error] label:first-child,
+		bl-input:has(>*[error]) i,
+		bl-input:has(>*[error]):has(*:focus) > i,
+		bl-input:has(>*[error]) label:first-child {
 			color:var(--bl-error) !important;
 		}
 
 	/* success */
-		bl-input[success] {
+		bl-input[success],
+		bl-input:has(>*[success]) {
 			border-color:var(--bl-success);
 		}
 		bl-input[success]:has(*:focus),
 		bl-input[success] [type=checkbox]:focus,
-		bl-input[success] [type=radio]:focus {
+		bl-input[success] [type=radio]:focus,
+		bl-input:has(>*[success]):has(*:focus),
+		bl-input:has(>*[success]) [type=checkbox]:focus,
+		bl-input:has(>*[success]) [type=radio]:focus {
 			outline-color:var(--bl-success-translucent);
 		}
 		bl-input[success] i,
 		bl-input[success]:has(*:focus) > i,
-		bl-input[success] label:first-child {
+		bl-input[success] label:first-child,
+		bl-input:has(>*[success]) i,
+		bl-input:has(>*[success]):has(*:focus) > i,
+		bl-input:has(>*[success]) label:first-child {
 			color:var(--bl-success);
+		}
+
+	/* disabled */
+		bl-input[disabled],
+		bl-input:has(>*[disabled]) {
+			pointer-events:none;
+			user-select:none;
+		}
+		bl-input[disabled] > *,
+		bl-input:has(>*[disabled]) > * {
+			color:var(--bl-disabled-text) !important;
 		}
 
 	/* required */
